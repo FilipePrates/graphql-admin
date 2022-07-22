@@ -1,0 +1,10 @@
+mutation mergeCreator($taskId: ID!, $userId: ID!) {
+  MergeTaskCreator(from: { id: $userId }, to: { id: $taskId }) {
+    from {
+      id
+    }
+    to {
+      id
+    }
+  }
+}

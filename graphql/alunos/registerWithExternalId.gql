@@ -1,0 +1,15 @@
+mutation registerStudentWithExternalId(
+  $email: String!
+  $name: String!
+  $externalId: String
+  $schoolClassId: ID
+) {
+  registerStudentExternalId(
+    email: $email
+    name: $name
+    externalId: $externalId
+    schoolClassId: $schoolClassId
+  ) {
+    id
+  }
+}

@@ -1,0 +1,10 @@
+mutation removeSchool($parentId: ID!, $childId: ID!) {
+  RemoveSchoolNestSchools(from: { schoolId: $childId }, to: { id: $parentId }) {
+    from {
+      schoolId
+    }
+    to {
+      id
+    }
+  }
+}

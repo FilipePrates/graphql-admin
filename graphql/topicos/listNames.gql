@@ -1,0 +1,9 @@
+query Topic($filter: _TopicFilter, $first: Int, $offset: Int) {
+  list: Topic(filter: $filter, first: $first, offset: $offset) {
+    Id: topicId
+    name
+    course {
+      name
+    }
+  }
+}

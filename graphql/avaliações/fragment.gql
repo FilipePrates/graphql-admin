@@ -1,0 +1,26 @@
+fragment Assessment on Assessment {
+  Id: id
+  name
+  type
+  startsAt {
+    startsAt: formatted
+  }
+  endsAt {
+    endsAt: formatted
+  }
+  duration
+  knowledgeArea {
+    knowledgeArea: name
+    id: knowledgeAreaId
+  }
+  weight
+  status
+  gradesReleased
+  checkCheating
+  shuffleQuestions
+  powerUpsActive
+  isArchived
+  createdAt {
+    createdAt: formatted
+  }
+}

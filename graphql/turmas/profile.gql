@@ -1,0 +1,101 @@
+#import "./fragment.gql"
+#import "../escolas/fragment.gql"
+#import "../educadores/fragment.gql"
+#import "../admins/fragment.gql"
+#import "../alunos/fragment.gql"
+#import "../redes/fragment.gql"
+#import "../atividades/fragment.gql"
+#import "../avaliações/fragment.gql"
+
+query SchoolClassProfile(
+  $id: ID
+  $now: String!
+  $sinceDate: String!
+  $first: Int
+  $offset: Int
+) {
+  profile: SchoolClass(schoolClassId: $id) {
+    ...SchoolClass
+    numberOfStudents
+    # activeStudents(beginDate: $sinceDate, endDate: $now)
+    # activeStudentsPercentage(beginDate: $sinceDate, endDate: $now)
+    completedNationalOlympicsMissionsCountAverage
+    isFrozen
+    clientStatus
+    createdAt {
+      createdAt: formatted
+    }
+    Alunos: students(first: $first, offset: $offset) {
+      ...Student
+      Turmas: schoolClasses {
+        name
+      }
+      clientStatus
+    }
+    Educadores: professors {
+      ...Professor
+      Turmas: schoolClasses {
+        name
+      }
+      Disciplinas: knowledgeAreas {
+        name
+      }
+      tasksCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+      assessmentsCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    }
+    Atividades: tasks(first: $first, offset: $offset) {
+      ...Task
+      status
+      creator {
+        email
+      }
+      schoolClass {
+        name
+      }
+      pointsMade
+    }
+    Avaliacoes: assessments(first: $first, offset: $offset) {
+      ...Assessment
+      creator {
+        email
+      }
+      schoolClass {
+        name
+      }
+    }
+
+    Redes: schoolNests {
+      ...SchoolNest
+      numberOfStudents
+      numberOfSchools
+    }
+
+    Escolas: schools {
+      ...School
+      Redes: schoolNests {
+        schoolNest: name
+      }
+      Admins: admins {
+        email
+      }
+    }
+
+    Admins: admins {
+      ...Admin
+    }
+
+    Ranking: ranking {
+      position
+      studentId
+      name
+      email
+      points
+      belongsTo
+      schoolYear
+    }
+
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

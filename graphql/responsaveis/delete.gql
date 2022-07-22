@@ -1,0 +1,5 @@
+mutation DeleteParent($Id: ID!) {
+  DeleteParent(id: $Id) {
+    id
+  }
+}

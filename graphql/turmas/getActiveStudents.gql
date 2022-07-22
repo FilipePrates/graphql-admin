@@ -1,0 +1,9 @@
+query getSchoolClassActiveStudents(
+  $id: ID!
+  $now: String!
+  $sinceDate: String!
+) {
+  profile: SchoolClass(schoolClassId: $id) {
+    activeStudents(beginDate: $sinceDate, endDate: $now)
+  }
+}

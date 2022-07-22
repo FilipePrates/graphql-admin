@@ -1,0 +1,20 @@
+#import "./fragment.gql"
+#import "../escolas/fragment.gql"
+#import "../admins/fragment.gql"
+
+query SchoolNestProfile($id: ID!, $sinceDate: String!, $now: String!) {
+  profile: SchoolNest(id: $id) {
+    ...SchoolNest
+    activeStudentsPercentage(beginDate: $sinceDate, endDate: $now)
+    Escolas: schools {
+      ...School
+      numberOfStudents
+    }
+    Admins: admins {
+      ...Admin
+    }
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

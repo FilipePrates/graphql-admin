@@ -1,0 +1,6 @@
+query getKnowledgeAreas {
+  KnowledgeArea {
+    Id: knowledgeAreaId
+    name
+  }
+}

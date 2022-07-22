@@ -1,0 +1,23 @@
+mutation UpdateAdmin(
+  $Id: ID!
+  $name: String
+  $normalizedName: String!
+  $email: String
+  $avatarUrl: String
+  $password: String
+  $role: AdminRole
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateAdmin(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    email: $email
+    avatarUrl: $avatarUrl
+    role: $role
+    password: $password
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

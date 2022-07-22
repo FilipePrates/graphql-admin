@@ -1,0 +1,6 @@
+query getCoursesByYear($year: String!) {
+  Course(filter: { visible: true, name_contains: $year }) {
+    name
+    courseId
+  }
+}

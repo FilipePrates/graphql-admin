@@ -1,0 +1,18 @@
+#import "./fragment.gql"
+#import "../alunos/fragment.gql"
+
+query ParentProfile($id: ID!) {
+  profile: Parent(id: $id) {
+    ...Parent
+    avatarUrl
+    Alunos: students {
+      ...Student
+      Turmas: schoolClasses {
+        name
+      }
+    }
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

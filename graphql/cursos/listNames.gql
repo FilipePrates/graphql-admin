@@ -1,0 +1,6 @@
+query Courses {
+  list: Course(orderBy: name_asc) {
+    Id: courseId
+    name
+  }
+}

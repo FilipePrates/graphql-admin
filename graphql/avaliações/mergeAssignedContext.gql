@@ -1,0 +1,3 @@
+mutation mergeStudent($parentId: ID!, $childId: ID!, $createdAt: String!) {
+  mergeStudentsAssessment(assessmentId: $parentId, studentsIds: [$childId])
+}

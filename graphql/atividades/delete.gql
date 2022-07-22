@@ -1,0 +1,3 @@
+mutation DeleteTask($Id: ID!) {
+  deleteTask(taskId: $Id)
+}

@@ -1,0 +1,9 @@
+query getSchoolActiveStudentsPercentage(
+  $id: ID!
+  $now: String!
+  $sinceDate: String!
+) {
+  Professor(id: $id) {
+    activeStudentsPercentage(beginDate: $sinceDate, endDate: $now)
+  }
+}

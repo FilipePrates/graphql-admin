@@ -1,0 +1,13 @@
+mutation removeSchoolClass($parentId: ID!, $childId: ID!) {
+  RemoveSchoolSchoolClasses(
+    from: { schoolClassId: $childId }
+    to: { schoolId: $parentId }
+  ) {
+    from {
+      schoolClassId
+    }
+    to {
+      schoolId
+    }
+  }
+}

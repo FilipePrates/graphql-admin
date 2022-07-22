@@ -1,0 +1,10 @@
+mutation mergeCreator($parentId: ID!, $childId: ID!) {
+  MergeAssessmentCreator(from: { id: $childId }, to: { id: $parentId }) {
+    from {
+      id
+    }
+    to {
+      id
+    }
+  }
+}

@@ -1,0 +1,38 @@
+mutation CreateAssessment(
+  $Id: ID!
+  $name: String!
+  $normalizedName: String!
+  $type: ContextType!
+  $instructions: String
+  $weight: Float!
+  $startsAt: _Neo4jDateTimeInput!
+  $endsAt: _Neo4jDateTimeInput!
+  $duration: Int!
+  $gradesReleased: Boolean!
+  $checkCheating: Boolean!
+  $shuffleQuestions: Boolean!
+  $isArchived: Boolean!
+  $powerUpsActive: Boolean!
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  CreateAssessment(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    type: $type
+    instructions: $instructions
+    weight: $weight
+    startsAt: $startsAt
+    endsAt: $endsAt
+    duration: $duration
+    gradesReleased: $gradesReleased
+    checkCheating: $checkCheating
+    shuffleQuestions: $shuffleQuestions
+    isArchived: $isArchived
+    powerUpsActive: $powerUpsActive
+    updatedAt: $updatedAt
+    createdAt: $updatedAt
+  ) {
+    id
+  }
+}

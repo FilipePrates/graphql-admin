@@ -1,0 +1,3 @@
+mutation mergeTask($parentId: ID!, $childId: ID!) {
+  mergeSchoolClassAndStudentsToTask(taskId: $childId, schoolClassId: $parentId)
+}

@@ -1,0 +1,10 @@
+mutation mergeProfessorTasks($parentId: ID!, $childId: ID!) {
+  MergeProfessorTasks(from: { id: $parentId }, to: { id: $childId }) {
+    from {
+      id
+    }
+    to {
+      id
+    }
+  }
+}

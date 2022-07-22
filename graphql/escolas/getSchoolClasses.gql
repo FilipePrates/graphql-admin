@@ -1,0 +1,10 @@
+query getSchoolSchoolClasses($schoolId: ID!) {
+  School(schoolId: $schoolId) {
+    schoolId
+    name
+    schoolClasses {
+      Id: schoolClassId
+      name
+    }
+  }
+}

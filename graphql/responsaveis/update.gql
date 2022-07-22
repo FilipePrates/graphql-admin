@@ -1,0 +1,19 @@
+mutation UpdateParent(
+  $Id: ID!
+  $name: String
+  $normalizedName: String!
+  $email: String
+  $avatarUrl: String
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateParent(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    email: $email
+    avatarUrl: $avatarUrl
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

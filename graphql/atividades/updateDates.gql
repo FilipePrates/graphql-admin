@@ -1,0 +1,21 @@
+mutation UpdateDatesTask(
+  $Id: ID!
+  $startDate: _Neo4jDateTimeInput
+  $endDate: _Neo4jDateTimeInput
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateTask(
+    id: $Id
+    startDate: $startDate
+    endDate: $endDate
+    updatedAt: $updatedAt
+  ) {
+    id
+    startDate {
+      formatted
+    }
+    endDate {
+      formatted
+    }
+  }
+}

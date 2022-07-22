@@ -1,0 +1,23 @@
+#import "./fragment.gql"
+#import "../redes/fragment.gql"
+#import "../escolas/fragment.gql"
+
+query AdminProfile($id: ID!) {
+  profile: Admin(id: $id) {
+    ...Admin
+    avatarUrl
+    Escolas: schools {
+      ...School
+      Redes: schoolNests {
+        schoolNest: name
+      }
+      numberOfStudents
+    }
+    Redes: schoolNests {
+      ...SchoolNest
+    }
+    updatedAt {
+      createdAt: formatted
+    }
+  }
+}

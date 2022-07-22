@@ -1,0 +1,27 @@
+query getHeader($id: ID!, $sinceDate: String!, $now: String!) {
+  profile: Task(id: $id) {
+    Id: id
+    name
+    type
+    startDate {
+      startDate: formatted
+    }
+    endDate {
+      endDate: formatted
+    }
+    isArchived
+    createdAt {
+      createdAt: formatted
+    }
+    numberOfStudents
+    numberOfSchoolClasses
+    numberOfSchools
+    pointsMade
+    description
+    activeStudents
+    questionsAnsweredCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

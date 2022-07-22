@@ -1,0 +1,6 @@
+query getCourses($knowledgeAreaId: ID!) {
+  Course(filter: { knowledgeArea: { knowledgeAreaId: $knowledgeAreaId } }) {
+    Id: courseId
+    name
+  }
+}

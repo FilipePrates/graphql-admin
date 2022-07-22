@@ -1,0 +1,13 @@
+mutation mergeStudent($parentId: ID!, $childId: ID!) {
+  MergeSchoolClassStudents(
+    from: { id: $childId }
+    to: { schoolClassId: $parentId }
+  ) {
+    from {
+      id
+    }
+    to {
+      schoolClassId
+    }
+  }
+}

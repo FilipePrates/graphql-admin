@@ -1,0 +1,10 @@
+mutation removeProfessorTasks($parentId: ID!, $childId: ID!) {
+  RemoveProfessorTasks(from: { id: $parentId }, to: { id: $childId }) {
+    from {
+      id
+    }
+    to {
+      id
+    }
+  }
+}

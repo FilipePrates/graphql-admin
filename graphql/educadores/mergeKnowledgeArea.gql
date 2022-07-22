@@ -1,0 +1,13 @@
+mutation mergeKnowledgeArea($parentId: ID!, $childId: ID!) {
+  MergeProfessorKnowledgeAreas(
+    from: { id: $parentId }
+    to: { knowledgeAreaId: $childId }
+  ) {
+    from {
+      id
+    }
+    to {
+      knowledgeAreaId
+    }
+  }
+}

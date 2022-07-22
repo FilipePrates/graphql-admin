@@ -1,0 +1,32 @@
+mutation CreateSchool(
+  $Id: ID!
+  $name: String!
+  $normalizedName: String!
+  $code: String!
+  $cnpj: String
+  $city: String
+  $isFrozen: Boolean
+  $isOnNationalOlympics: Boolean
+  $clientStatus: ClientStatus
+  $updatedAt: _Neo4jDateTimeInput!
+  $trialStartDate: _Neo4jDateTimeInput
+  $trialEndDate: _Neo4jDateTimeInput
+) {
+  CreateSchool(
+    schoolId: $Id
+    name: $name
+    normalizedName: $normalizedName
+    code: $code
+    cnpj: $cnpj
+    city: $city
+    isFrozen: $isFrozen
+    isOnNationalOlympics: $isOnNationalOlympics
+    clientStatus: $clientStatus
+    createdAt: $updatedAt
+    updatedAt: $updatedAt
+    trialStartDate: $trialStartDate
+    trialEndDate: $trialEndDate
+  ) {
+    schoolId
+  }
+}

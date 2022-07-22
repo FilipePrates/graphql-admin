@@ -1,0 +1,68 @@
+#import "./fragment.gql"
+#import "../turmas/fragment.gql"
+#import "../alunos/fragment.gql"
+
+query TaskProfile(
+  $id: ID!
+  # $sinceDate: String!
+  $now: String!
+  $first: Int
+  $offset: Int
+) {
+  profile: Task(id: $id) {
+    ...Task
+    pointsMade
+    description
+    activeStudents
+    status
+    questionsAnsweredCount(
+      createdAt_gte: "2000-01-01T12:00:00Z"
+      createdAt_lte: $now
+    )
+    creator {
+      id
+      email
+    }
+    Ranking: ranking(first: $first, offset: $offset) {
+      position
+      name
+      email
+      belongsTo
+      schoolYear
+      points
+    }
+    Alunos: students(first: $first, offset: $offset) {
+      ...Student
+      Turmas: schoolClasses {
+        name
+      }
+      clientStatus
+    }
+    Turmas: schoolClass {
+      ...SchoolClass
+      Escolas: schools {
+        name
+      }
+      Admins: admins {
+        email
+      }
+      numberOfStudents
+     # activeStudentsPercentage(beginDate: $sinceDate, endDate: $now)
+    }
+    Topicos: topics {
+      Id: topicId
+      questionsCount
+      questionsCountVisible
+      name
+      course {
+        name
+        knowledgeArea {
+          name
+        }
+      }
+    }
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

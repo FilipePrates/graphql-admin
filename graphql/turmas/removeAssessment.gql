@@ -1,0 +1,13 @@
+mutation removeAssessment($parentId: ID!, $childId: ID!) {
+  RemoveSchoolClassAssessments(
+    from: { id: $childId }
+    to: { schoolClassId: $parentId }
+  ) {
+    from {
+      id
+    }
+    to {
+      schoolClassId
+    }
+  }
+}

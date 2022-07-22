@@ -1,0 +1,34 @@
+query Report($taskId: ID!, $now: String!) {
+  report: Task(id: $taskId) {
+    numberOfStudents
+    activeStudents
+    questionsAnsweredCount(
+      createdAt_gte: "2000-01-01T12:00:00Z"
+      createdAt_lte: $now
+    )
+    schoolClassesStatistics {
+      schoolClassId
+      schoolName
+      name
+      activeStudents
+      numberOfQuestions
+      numberOfStudents
+      questionsAverage
+    }
+    bestAndWorstAbilities {
+      schoolName
+      schoolClassName
+      name
+      performance
+      hits
+      numberOfTries
+    }
+    bestStudentsByKnowledgeArea {
+      knowledgeAreaName
+      schoolName
+      schoolClassName
+      bestStudent
+      hits
+    }
+  }
+}

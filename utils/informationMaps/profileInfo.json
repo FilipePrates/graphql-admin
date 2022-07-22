@@ -1,0 +1,145 @@
+{
+  "Student": {
+    "header": ["Id", "email", "schoolYear", "points", "keys", "trophies"],
+    "chips": [],
+    "rects": [
+      {
+        "prop": "questionsAnsweredCount",
+        "extra": "Questões Feitas",
+        "color": "#5C9CE5"
+      },
+      {
+        "prop": "correctQuestionsAnsweredCount",
+        "extra": "Corretas",
+        "color": "#5C9CE5"
+      }
+    ]
+  },
+  "Professor": {
+    "header": ["Id", "email", "role", "tasksCount", "assessmentsCount"],
+    "chips": [],
+    "rects": [
+      { "prop": "tasksCount", "extra": "Atividades", "color": "#5C9CE5" },
+      {
+        "prop": "activeTasksCount",
+        "extra": "Atividades Ativas",
+        "color": "#5C9CE5"
+      }
+    ]
+  },
+  "School": {
+    "header": [
+      "Id",
+      "code",
+      "cnpj",
+      "isFrozen",
+      "numberOfSchoolClasses",
+      "numberOfStudents",
+      "activeStudentsPercentage",
+      "trialEndDate.formatted"
+    ],
+    "chips": [
+      { "prop": "clientStatus", "color": "#C8FADF", "expected": "ACTIVE" },
+      { "prop": "clientStatus", "color": "#C8DFFA", "expected": "TRIAL" },
+      { "prop": "clientStatus", "color": "#FAC8C8", "expected": "CHURN" },
+      { "prop": "Redes", "color": "#89B4E5" }
+    ],
+    "rects": [
+      { "prop": "numberOfStudents", "extra": "Alunos", "color": "#5C9CE5" },
+      {
+        "prop": "activeStudents",
+        "extra": "Ativos",
+        "color": "#5C9CE5",
+        "isBtn": true
+      }
+    ]
+  },
+  "SchoolClass": {
+    "header": [
+      "Id",
+      "code",
+      "schoolYear",
+      "isFrozen",
+      "numberOfStudents",
+      "activeStudents",
+      "activeStudentsPercentage"
+    ],
+    "chips": [
+      { "prop": "clientStatus", "color": "#C8FADF", "expected": "ACTIVE" },
+      { "prop": "clientStatus", "color": "#C8DFFA", "expected": "TRIAL" },
+      { "prop": "clientStatus", "color": "#FAC8C8", "expected": "CHURN" }
+    ],
+    "rects": [
+      { "prop": "numberOfStudents", "extra": "Alunos", "color": "#5C9CE5" },
+      {
+        "prop": "activeStudents",
+        "extra": "Ativos",
+        "color": "#5C9CE5",
+        "isBtn": true
+      }
+    ]
+  },
+  "Parent": {
+    "header": ["Id", "email"],
+    "chips": [],
+    "rects": []
+  },
+  "Admin": {
+    "header": ["Id", "email", "role"],
+    "chips": [],
+    "rects": []
+  },
+  "Assessment": {
+    "header": [
+      "Id",
+      "type",
+      "creator.email",
+      "creator.__typename",
+      "creator.Id",
+      "status",
+      "gradesReleased",
+      "checkCheating",
+      "shuffleQuestions",
+      "powerUpsActive",
+      "instructions"
+    ],
+    "chips": [],
+    "rects": [
+      {
+        "prop": "questionsAnsweredCount",
+        "extra": "Questões Feitas",
+        "color": "#5C9CE5"
+      },
+      {
+        "prop": "activeStudents",
+        "extra": "Alunos Ativos",
+        "color": "#5C9CE5"
+      }
+    ]
+  },
+  "Task": {
+    "header": [
+      "Id",
+      "type",
+      "creator.email",
+      "creator.id",
+      "creator.__typename",
+      "description",
+      "status",
+      "pointsMade",
+      "questionsAnsweredCount"
+    ],
+    "chips": [],
+    "rects": [
+      {
+        "prop": "activeStudents",
+        "extra": "Alunos Ativos",
+        "color": "#5C9CE5"
+      }
+    ]
+  },
+  "SchoolNest": {
+    "chips": [],
+    "rects": []
+  }
+}

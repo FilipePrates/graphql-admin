@@ -1,0 +1,4 @@
+{
+  "Context": ["Assessment", "Battle", "NarrativeChapter", "Planet", "Task"],
+  "User": ["Admin", "Professor", "Parent", "Student"]
+}

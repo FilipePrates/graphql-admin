@@ -1,0 +1,22 @@
+query getSchoolClassesRanking(
+  $id: ID!
+  $first: Int
+  $offset: Int
+  $schoolYear: Int
+  $name: String
+) {
+  schoolClassRanking: Task(id: $id) {
+    id
+    schoolClassRanking(
+      first: $first
+      offset: $offset
+      name: $name
+      schoolYear: $schoolYear
+    ) {
+      position
+      name
+      # schoolYear
+      points
+    }
+  }
+}

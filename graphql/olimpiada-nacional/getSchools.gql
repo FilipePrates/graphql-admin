@@ -1,0 +1,6 @@
+query getSchools {
+  schools: School {
+    Id: schoolId
+    name
+  }
+}

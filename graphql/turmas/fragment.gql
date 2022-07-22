@@ -1,0 +1,10 @@
+fragment SchoolClass on SchoolClass {
+  Id: schoolClassId
+  name
+  isFrozen
+  createdAt {
+    createdAt: formatted
+  }
+  schoolYear
+  code
+}

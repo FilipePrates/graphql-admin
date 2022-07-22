@@ -1,0 +1,3 @@
+mutation CreateStudentsByCSV($url: String!) {
+  registerStudentsByCSV(url: $url)
+}

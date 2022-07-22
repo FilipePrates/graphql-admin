@@ -1,0 +1,15 @@
+query StudentsNamesList(
+  $filter: _SchoolClassFilter
+  $first: Int
+  $offset: Int
+) {
+  list: SchoolClass(filter: $filter, first: $first, offset: $offset) {
+    Id: schoolClassId
+    name
+    students {
+      Id: id
+      name
+      email
+    }
+  }
+}

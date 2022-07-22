@@ -1,0 +1,252 @@
+#import "./fragment.gql"
+#import "../responsaveis/fragment.gql"
+#import "../escolas/fragment.gql"
+#import "../turmas/fragment.gql"
+#import "../atividades/fragment.gql"
+
+query StudentProfile(
+  $id: ID!
+  $first: Int
+  $offset: Int
+  $sinceDate: String!
+  $now: String!
+) {
+  profile: Student(id: $id) {
+    points
+    trophies
+    keys
+    ...Student
+    clientStatus
+    avatarUrl
+    parentFullName
+    questionsAnsweredCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    correctQuestionsAnsweredCount(
+      createdAt_gte: $sinceDate
+      createdAt_lte: $now
+    )
+    completedNationalOlympicsMissionsCount
+    birthday {
+      birthday: formatted
+    }
+
+    Atividades: tasks {
+      ...Task
+      status
+      creator {
+        email
+      }
+      pointsMade
+    }
+
+    Notas: assignedContext(
+      filter: {
+        type_in: [SUMMATIVE, SUMMATIVE_HYBRID, DIAGNOSTIC, DIAGNOSTIC_HYBRID]
+      }
+    ) {
+      grade
+      timeSpent
+      type
+      student {
+        Id: id
+        email
+        name
+        powerUpsInContext(contextId: $id)
+        powerUpsCount(contextId: $id)
+        questionsAnsweredCountInContext(contextId: $id)
+      }
+      context {
+        Id: id
+        name
+        knowledgeArea {
+          name
+        }
+      }
+      createdAt {
+        createdAt: formatted
+      }
+      attempts
+      status
+    }
+
+    Respostas: questionsAnswered(first: $first, offset: $offset) {
+      points
+      bonusPoints
+      Id: studentAnswerId
+      question {
+        questionId
+        topic {
+          course {
+            name
+          }
+          name
+        }
+      }
+      fraction
+      assignedContext {
+        context {
+          name
+          Id: id
+          type
+        }
+      }
+      powerUpUsed {
+        name
+      }
+      createdAt {
+        receivedAt: formatted
+      }
+    }
+
+    Pontos: pointTransactions(first: $first, offset: $offset) {
+      quantity
+      bonus
+      studentAnswer {
+        points
+        bonusPoints
+        Id: studentAnswerId
+        question {
+          questionId
+          topic {
+            course {
+              name
+            }
+            name
+          }
+        }
+        fraction
+        assignedContext {
+          context {
+            name
+            Id: id
+            type
+          }
+        }
+        powerUpUsed {
+          name
+        }
+        createdAt {
+          receivedAt: formatted
+        }
+      }
+    }
+
+    Fases: phases {
+      Phase {
+        order
+        level {
+          name
+          planet {
+            name
+          }
+        }
+      }
+      createdAt {
+        phase: formatted
+      }
+      stars
+    }
+
+    Missoes: missions(filter: { completed: true }) {
+      Mission {
+        title
+        description
+        nationalOlympicsTopics {
+          topic5thGrade {
+            topicId
+            name
+          }
+          topic6thGrade {
+            topicId
+            name
+          }
+          topic7thGrade {
+            topicId
+            name
+          }
+          topic8thGrade {
+            topicId
+            name
+          }
+          topic9thGrade {
+            topicId
+            name
+          }
+        }
+      }
+      completed
+      createdAt {
+        formatted
+      }
+      completedAt {
+        formatted
+      }
+    }
+
+    Chaves: keyTransactions(first: $first, offset: $offset) {
+      quantity
+      createdAt {
+        formatted
+      }
+    }
+
+    Baus: chestTransactions {
+      createdAt {
+        receivedAt: formatted
+      }
+      quantity
+      chest {
+        name
+        keysRequired
+      }
+    }
+
+    Trofeus: trophyTransactions(first: $first, offset: $offset) {
+      quantity
+      battle {
+        type
+      }
+      createdAt {
+        formatted
+      }
+    }
+
+    Itens: items {
+      name
+      type
+      rarity
+      level {
+        name
+      }
+    }
+
+    Escolas: schools {
+      ...School
+      Redes: schoolNests {
+        schoolNest: name
+      }
+      numberOfStudents
+      Admins: admins {
+        email
+      }
+    }
+
+    Turmas: schoolClasses {
+      ...SchoolClass
+      Escolas: schools {
+        name
+      }
+      Admins: admins {
+        email
+      }
+      numberOfStudents
+    }
+
+    Responsaveis: parents {
+      ...Parent
+    }
+
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

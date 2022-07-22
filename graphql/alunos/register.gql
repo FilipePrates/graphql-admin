@@ -1,0 +1,9 @@
+mutation registerStudent(
+  $name: String!
+  $email: String!
+  $schoolClassId: String
+) {
+  registerStudent(email: $email, name: $name, schoolClassId: $schoolClassId) {
+    id
+  }
+}

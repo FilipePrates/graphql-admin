@@ -1,0 +1,18 @@
+mutation OpenAssessmentToStudent(
+  $assignedContextId: ID!
+  $attempts: Int!
+  $grade: Float!
+  $timeSpent: Int!
+  $createdAt: _Neo4jDateTimeInput!
+) {
+  UpdateAssignedContext(
+    id: $assignedContextId
+    status: SCHEDULED
+    attempts: $attempts
+    grade: $grade
+    timeSpent: $timeSpent
+    createdAt: $createdAt
+  ) {
+    id
+  }
+}

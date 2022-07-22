@@ -1,0 +1,27 @@
+#import "./fragment.gql"
+
+query TaskList(
+  $first: Int
+  $offset: Int
+  $orderBy: [_TaskOrdering]
+  $filter: _TaskFilter
+) {
+  list: Task(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...Task
+    status
+    createdAt {formatted}
+    creator {
+      id
+      email
+      whatsappNumber
+    }
+    schoolClass {
+      name
+    }
+  }
+}

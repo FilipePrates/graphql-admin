@@ -1,0 +1,38 @@
+query FullStudentHistory($id: ID!) {
+  Historico: Student(id: $id) {
+    id
+    Pontos: pointTransactions {
+      quantity
+      bonus
+      studentAnswer {
+        question {
+          questionId
+          topic {
+            course {
+              name
+            }
+            name
+          }
+        }
+        fraction
+        context {
+          # ... on Task {
+          #   Id: id
+          #   name
+          # }
+          # ... on Assessment {
+          #   Id: id
+          #   name
+          # }
+          # ... on Battle {
+          #   Id: id
+          # }
+          Id: id
+        }
+        createdAt {
+          formatted
+        }
+      }
+    }
+  }
+}

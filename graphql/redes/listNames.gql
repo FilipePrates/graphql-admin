@@ -1,0 +1,6 @@
+query SchoolNestList($filter: _SchoolNestFilter, $first: Int, $offset: Int) {
+  list: SchoolNest(filter: $filter, first: $first, offset: $offset) {
+    Id: id
+    name
+  }
+}

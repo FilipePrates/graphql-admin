@@ -1,0 +1,15 @@
+mutation UpdateDatesAssessment(
+  $Id: ID!
+  $startDate: _Neo4jDateTimeInput
+  $endDate: _Neo4jDateTimeInput
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateAssessment(
+    id: $Id
+    startsAt : $startDate 
+    endsAt: $endDate
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

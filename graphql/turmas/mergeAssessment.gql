@@ -1,0 +1,13 @@
+mutation mergeAssessment($parentId: ID!, $childId: ID!) {
+  MergeSchoolClassAssessments(
+    from: { id: $childId }
+    to: { schoolClassId: $parentId }
+  ) {
+    from {
+      id
+    }
+    to {
+      schoolClassId
+    }
+  }
+}

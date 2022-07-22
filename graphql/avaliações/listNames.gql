@@ -1,0 +1,6 @@
+query AssessmentList($first: Int, $offset: Int) {
+  list: Assessment(first: $first, offset: $offset) {
+    Id: id
+    name
+  }
+}

@@ -1,0 +1,33 @@
+#import "./fragment.gql"
+
+query ProfessorList(
+  $first: Int
+  $offset: Int
+  $sinceDate: String!
+  $now: String!
+  $orderBy: [_ProfessorOrdering]
+  $filter: _ProfessorFilter
+) {
+  list: Professor(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...Professor
+    Turmas: schoolClasses {
+      name
+    }
+    Disciplinas: knowledgeAreas {
+      name
+    }
+    tasksCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    assessmentsCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    school: schools {
+      school: name
+    }
+    knowledgeArea: knowledgeAreas {
+      knowledgeArea: name
+    }
+  }
+}

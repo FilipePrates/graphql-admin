@@ -1,0 +1,6 @@
+mutation removeSchoolClass($parentId: ID!, $childId: ID!) {
+  removeSchoolClassAndStudentsFromTask(
+    taskId: $parentId
+    schoolClassId: $childId
+  )
+}

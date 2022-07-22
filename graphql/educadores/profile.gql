@@ -1,0 +1,74 @@
+#import "../escolas/fragment.gql"
+#import "../turmas/fragment.gql"
+#import "../atividades/fragment.gql"
+#import "../avaliações/fragment.gql"
+#import "./fragment.gql"
+
+query ProfessorProfile(
+  $id: ID!
+  $sinceDate: String!
+  $now: String!
+  $first: Int
+  $offset: Int
+) {
+  profile: Professor(id: $id) {
+    ...Professor
+    activeTasksCount(startsAt: $sinceDate, endsAt: $now)
+    tasksCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    assessmentsCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    avatarUrl
+    role
+    Atividades: tasks(first: $first, offset: $offset) {
+      ...Task
+      pointsMade
+      status
+      schoolClass {
+        name
+      }
+      creator {
+        email
+      }
+    }
+
+    Avaliacoes: assessments(first: $first, offset: $offset) {
+      ...Assessment
+      schoolClass {
+        name
+      }
+      creator {
+        email
+      }
+    }
+
+    Escolas: schools(first: $first, offset: $offset) {
+      ...School
+      Redes: schoolNests {
+        schoolNest: name
+      }
+      Admins: admins {
+        email
+      }
+      numberOfStudents
+    }
+
+    Turmas: schoolClasses(first: $first, offset: $offset) {
+      ...SchoolClass
+      Escolas: schools {
+        name
+      }
+      Admins: admins {
+        email
+      }
+      numberOfStudents
+    }
+
+    Disciplinas: knowledgeAreas {
+      knowledgeAreaId
+      name
+    }
+
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

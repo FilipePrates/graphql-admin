@@ -1,0 +1,3 @@
+mutation ResetRanking($Id: ID!, $contextId: ID!) {
+  deleteUserFromRanking(contextId: $contextId, userId: $Id)
+}

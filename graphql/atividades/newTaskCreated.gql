@@ -1,0 +1,21 @@
+#import "./fragment.gql"
+
+query TaskList(
+  $id: ID!
+) {
+Task(
+    id: $id
+  ) {
+    ...Task
+    status
+    createdAt {formatted}
+    creator {
+      id
+      email
+      whatsappNumber
+    }
+    schoolClass {
+      name
+    }
+  }
+}

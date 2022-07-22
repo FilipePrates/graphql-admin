@@ -1,0 +1,6 @@
+query awsS3PreSignedUploadUrl($filename: String!, $contentType: MIMEType!) {
+  awsS3PreSignedUploadUrl(fileName: $filename, contentType: $contentType) {
+    baseUrl
+    signedUrl
+  }
+}

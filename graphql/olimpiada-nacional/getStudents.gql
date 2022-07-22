@@ -1,0 +1,30 @@
+query getStudents(
+  $id: ID!
+  $sinceDate: String!
+  $now: String!
+  $first: Int
+  $offset: Int
+  $filter: _StudentFilter
+) {
+  students: Task(id: $id) {
+    students(
+      orderBy: completedNationalOlympicsMissionsCount_desc
+      first: $first
+      offset: $offset
+      filter: $filter
+    ) {
+      Id: id
+      name
+      email
+      schoolClasses {
+        name
+        school {
+          name
+        }
+      }
+      correctQuestionsAnsweredPercentageInContext(contextId: $id)
+      questionsAnsweredCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+      completedNationalOlympicsMissionsCount
+    }
+  }
+}

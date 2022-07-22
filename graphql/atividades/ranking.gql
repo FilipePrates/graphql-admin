@@ -1,0 +1,12 @@
+query GetTaskRanking($id: ID!) {
+  Task(id: $id) {
+    id
+    Ranking: ranking {
+      Nome: name
+      Email: email
+      Ano: schoolYear
+      Turma: belongsTo
+      Pontos: points
+    }
+  }
+}

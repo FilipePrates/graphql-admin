@@ -1,0 +1,10 @@
+mutation removeTaskTopic($parentId: ID!, $childId: ID!) {
+  RemoveTaskTopics(from: { topicId: $childId }, to: { id: $parentId }) {
+    from {
+      topicId
+    }
+    to {
+      id
+    }
+  }
+}

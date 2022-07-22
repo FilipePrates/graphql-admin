@@ -1,0 +1,67 @@
+{
+  "SchoolNest": {
+    "props": ["name", "avatarUrl"]
+  },
+  "School": {
+    "props": [
+      "name",
+      "city",
+      "avatarUrl",
+      "code",
+      "cnpj",
+      "isFrozen",
+      "isOnNationalOlympics",
+      "clientStatus",
+      "trialStartDate",
+      "trialEndDate"
+    ]
+  },
+  "SchoolClass": {
+    "props": ["name", "schoolYear", "code", "description", "isFrozen"]
+  },
+  "Student": {
+    "props": [
+      "name",
+      "email",
+      "nickname",
+      "birthday",
+      "parentFullName",
+      "avatarUrl"
+    ]
+  },
+  "Professor": {
+    "props": ["name", "email", "role", "avatarUrl","whatsappNumber"]
+  },
+  "Parent": {
+    "props": ["name", "email", "avatarUrl"]
+  },
+  "Admin": {
+    "props": ["name", "email", "role", "avatarUrl"]
+  },
+  "Task": {
+    "props": [
+      "name",
+      "type",
+      "description",
+      "startDate",
+      "endDate",
+      "isArchived"
+    ]
+  },
+  "Assessment": {
+    "props": [
+      "name",
+      "type",
+      "instructions",
+      "startsAt",
+      "endsAt",
+      "weight",
+      "duration",
+      "gradesReleased",
+      "checkCheating",
+      "shuffleQuestions",
+      "powerUpsActive",
+      "isArchived"
+    ]
+  }
+}

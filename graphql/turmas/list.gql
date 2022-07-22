@@ -1,0 +1,32 @@
+#import "./fragment.gql"
+
+query SchoolClassList(
+  $first: Int
+  $offset: Int
+  $orderBy: [_SchoolClassOrdering]
+  $filter: _SchoolClassFilter
+) {
+  list: SchoolClass(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...SchoolClass
+    Redes: schoolNests {
+      name
+    }
+    Escolas: schools {
+      name
+    }
+    Admins: admins {
+      email
+    }
+    numberOfStudents
+    isFrozen
+    clientStatus
+    createdAt {
+      createdAt: formatted
+    }
+  }
+}

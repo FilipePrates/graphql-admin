@@ -1,0 +1,17 @@
+#import "./fragment.gql"
+
+query ParentList(
+  $first: Int
+  $offset: Int
+  $orderBy: [_ParentOrdering]
+  $filter: _ParentFilter
+) {
+  list: Parent(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...Parent
+  }
+}

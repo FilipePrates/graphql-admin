@@ -1,0 +1,3 @@
+mutation removeStudent($parentId: ID!, $childId: ID!) {
+  removeStudentsTask(taskId: $parentId, studentsIds: [$childId])
+}

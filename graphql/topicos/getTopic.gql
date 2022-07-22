@@ -1,0 +1,8 @@
+query GetTopic($topicId: ID!) {
+  Topic(topicId: $topicId, filter: { visible: true, questions_not: null }) {
+    name
+    course {
+      name
+    }
+  }
+}

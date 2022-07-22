@@ -1,0 +1,16 @@
+fragment Student on Student {
+  Id: id
+  name
+  nickname
+  schoolYear
+  email
+  birthday {
+    birthday: formatted
+  }
+  lastActivity {
+    lastActivity: formatted
+  }
+  createdAt {
+    createdAt: formatted
+  }
+}

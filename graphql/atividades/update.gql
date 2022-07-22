@@ -1,0 +1,25 @@
+mutation UpdateTask(
+  $Id: ID!
+  $name: String
+  $normalizedName: String
+  $description: String
+  $startDate: _Neo4jDateTimeInput
+  $endDate: _Neo4jDateTimeInput
+  $type: ContextType
+  $isArchived: Boolean
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateTask(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    description: $description
+    startDate: $startDate
+    endDate: $endDate
+    type: $type
+    isArchived: $isArchived
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

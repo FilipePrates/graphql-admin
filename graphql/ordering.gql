@@ -1,0 +1,9 @@
+query ordering($name: String!) {
+  possibleOrderByOptions: __type(name: $name) {
+    name
+    kind
+    enumValues(includeDeprecated: true) {
+      name
+    }
+  }
+}

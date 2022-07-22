@@ -1,0 +1,5 @@
+mutation DeleteAdmin($Id: ID!) {
+  DeleteAdmin(id: $Id) {
+    id
+  }
+}

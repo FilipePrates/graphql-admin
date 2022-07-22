@@ -1,0 +1,17 @@
+#import "./fragment.gql"
+
+query AdminList(
+  $first: Int
+  $offset: Int
+  $orderBy: [_AdminOrdering]
+  $filter: _AdminFilter
+) {
+  list: Admin(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...Admin
+  }
+}

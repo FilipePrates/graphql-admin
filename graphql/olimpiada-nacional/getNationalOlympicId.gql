@@ -1,0 +1,6 @@
+query getNationalOlympicID {
+  NationalOlympic: Task(filter:{type:NATIONAL_OLYMPICS},first:1,orderBy:createdAt_desc) {
+    Id: id
+    name
+  }
+}

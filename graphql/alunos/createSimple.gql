@@ -1,0 +1,26 @@
+mutation CreateStudent(
+  $Id: ID!
+  $name: String!
+  $normalizedName: String!
+  $nickname: String
+  $schoolYear: Int!
+  $birthday: _Neo4jDateTimeInput
+  $email: String!
+  $password: String!
+  $createdAt: _Neo4jDateTimeInput!
+) {
+  CreateStudent(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    nickname: $nickname
+    birthday: { formatted: $birthday }
+    email: $email
+    schoolYear: $schoolYear
+    password: $password
+    createdAt: { formatted: $createdAt }
+    updatedAt: { formatted: $createdAt }
+  ) {
+    id
+  }
+}

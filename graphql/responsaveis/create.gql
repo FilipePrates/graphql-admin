@@ -1,0 +1,22 @@
+mutation CreateParent(
+  $Id: ID!
+  $name: String!
+  $normalizedName: String!
+  $email: String!
+  $avatarUrl: String
+  $password: String!
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  CreateParent(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    email: $email
+    avatarUrl: $avatarUrl
+    password: $password
+    createdAt: $updatedAt
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

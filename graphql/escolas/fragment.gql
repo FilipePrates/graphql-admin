@@ -1,0 +1,20 @@
+fragment School on School {
+  Id: schoolId
+  name
+  code
+  isFrozen
+  isOnNationalOlympics
+  cnpj
+  city
+  numberOfStudents
+  createdAt {
+    createdAt: formatted
+  }
+  clientStatus
+  trialStartDate {
+    formatted
+  }
+  trialEndDate {
+    formatted
+  }
+}

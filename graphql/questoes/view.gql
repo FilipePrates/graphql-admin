@@ -1,0 +1,10 @@
+query viewQuestion($questionId: ID!) {
+  Question(questionId: $questionId) {
+    name
+    text
+    answers {
+      text
+      fraction
+    }
+  }
+}

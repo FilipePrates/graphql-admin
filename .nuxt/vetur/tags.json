@@ -1,0 +1,74 @@
+{
+  "AvailableCoursesTags": {
+    "description": "Auto imported from components/AvailableCoursesTags.vue"
+  },
+  "ChangeAssessmentSchoolClass": {
+    "description": "Auto imported from components/ChangeAssessmentSchoolClass.vue"
+  },
+  "ChipButton": {
+    "description": "Auto imported from components/ChipButton.vue"
+  },
+  "DataTable": {
+    "description": "Auto imported from components/DataTable.vue"
+  },
+  "DataTableHeader": {
+    "description": "Auto imported from components/DataTableHeader.vue"
+  },
+  "DateTimeInBulkForm": {
+    "description": "Auto imported from components/DateTimeInBulkForm.vue"
+  },
+  "EmptyState": {
+    "description": "Auto imported from components/EmptyState.vue"
+  },
+  "FilterTab": {
+    "description": "Auto imported from components/FilterTab.vue"
+  },
+  "FormCoursesPicker": {
+    "description": "Auto imported from components/FormCoursesPicker.vue"
+  },
+  "FormDatePicker": {
+    "description": "Auto imported from components/FormDatePicker.vue"
+  },
+  "FormDateTimePicker": {
+    "description": "Auto imported from components/FormDateTimePicker.vue"
+  },
+  "FormSchoolClassPicker": {
+    "description": "Auto imported from components/FormSchoolClassPicker.vue"
+  },
+  "FormSchoolPicker": {
+    "description": "Auto imported from components/FormSchoolPicker.vue"
+  },
+  "FormTopicSelector": {
+    "description": "Auto imported from components/FormTopicSelector.vue"
+  },
+  "JGLoader": {
+    "description": "Auto imported from components/JGLoader.vue"
+  },
+  "ProfileActions": {
+    "description": "Auto imported from components/ProfileActions.vue"
+  },
+  "TheAppBar": {
+    "description": "Auto imported from components/TheAppBar.vue"
+  },
+  "TheForm": {
+    "description": "Auto imported from components/TheForm.vue"
+  },
+  "TheMergeForm": {
+    "description": "Auto imported from components/TheMergeForm.vue"
+  },
+  "TheMergeFormStudents": {
+    "description": "Auto imported from components/TheMergeFormStudents.vue"
+  },
+  "TheMoveStudentsToNewSchoolClass": {
+    "description": "Auto imported from components/TheMoveStudentsToNewSchoolClass.vue"
+  },
+  "TheProfessorCsvImport": {
+    "description": "Auto imported from components/TheProfessorCsvImport.vue"
+  },
+  "TheStudentCsvImport": {
+    "description": "Auto imported from components/TheStudentCsvImport.vue"
+  },
+  "TheStudentCsvImportExternalId": {
+    "description": "Auto imported from components/TheStudentCsvImportExternalId.vue"
+  }
+}

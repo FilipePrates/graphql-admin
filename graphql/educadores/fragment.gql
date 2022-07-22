@@ -1,0 +1,13 @@
+fragment Professor on Professor {
+  Id: id
+  name
+  email
+  clientStatus
+  role
+  lastActivity {
+    lastActivity: formatted
+  }
+  createdAt {
+    createdAt: formatted
+  }
+}

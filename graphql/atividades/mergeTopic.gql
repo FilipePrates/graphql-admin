@@ -1,0 +1,10 @@
+mutation mergeTaskTopic($parentId: ID!, $childId: ID!) {
+  MergeTaskTopics(from: { topicId: $childId }, to: { id: $parentId }) {
+    from {
+      topicId
+    }
+    to {
+      id
+    }
+  }
+}

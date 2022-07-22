@@ -1,0 +1,37 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_d7c7fc9c"
+  },
+  {
+    "name": "olimpiada-nacional",
+    "path": "/olimpiada-nacional",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/olimpiada-nacional.vue",
+    "chunkName": "pages/olimpiada-nacional",
+    "_name": "_5206ac1a"
+  },
+  {
+    "name": "lista-type",
+    "path": "/lista/:type?",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/lista/_type.vue",
+    "chunkName": "pages/lista/_type",
+    "_name": "_f3328bd4"
+  },
+  {
+    "name": "perfil-type-id",
+    "path": "/perfil/:type?/:id?",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/perfil/_type/_id.vue",
+    "chunkName": "pages/perfil/_type/_id",
+    "_name": "_0b2f50f0"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_6b1742ca"
+  }
+]

@@ -1,0 +1,10 @@
+mutation removeCreator($taskId: ID!, $userId: ID!) {
+  RemoveTaskCreator(from: { id: $userId }, to: { id: $taskId }) {
+    from {
+      id
+    }
+    to {
+      id
+    }
+  }
+}

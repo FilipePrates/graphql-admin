@@ -1,0 +1,101 @@
+#import "./fragment.gql"
+#import "../alunos/fragment.gql"
+#import "../educadores/fragment.gql"
+#import "../admins/fragment.gql"
+#import "../turmas/fragment.gql"
+#import "../redes/fragment.gql"
+#import "../atividades/fragment.gql"
+#import "../avaliações/fragment.gql"
+
+query SchoolProfile(
+  $id: ID!
+  $now: String!
+  $sinceDate: String!
+  $first: Int
+  $offset: Int
+) {
+  profile: School(schoolId: $id) {
+    ...School
+    avatarUrl
+    #activeStudents(beginDate: $sinceDate, endDate: $now)
+    #activeStudentsPercentage(beginDate: $sinceDate, endDate: $now)
+    completedNationalOlympicsMissionsCountAverage
+    numberOfStudents
+    numberOfSchoolClasses
+    Turmas: schoolClasses(first: $first, offset: $offset) {
+      ...SchoolClass
+      Escolas: schools {
+        name
+      }
+      Admins: admins {
+        email
+      }
+      numberOfStudents
+    }
+
+    Educadores: professors(first: $first, offset: $offset) {
+      ...Professor
+      Turmas: schoolClasses {
+        name
+      }
+      Disciplinas: knowledgeAreas {
+        name
+      }
+      tasksCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+      assessmentsCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    }
+
+    Alunos: students(first: $first, offset: $offset) {
+      ...Student
+      Turmas: schoolClasses {
+        name
+      }
+      clientStatus
+    }
+
+    Atividades: allTasks(first: $first, offset: $offset) {
+      ...Task
+      status
+      creator {
+        email
+      }
+      schoolClass {
+        name
+      }
+    }
+
+    Avaliacoes: allAssessments(first: $first, offset: $offset) {
+      ...Assessment
+      creator {
+        email
+      }
+      schoolClass {
+        name
+      }
+    }
+
+    Cursos: courses {
+      Id: courseId
+      name
+      knowledgeArea {
+        mainColor
+        backgroundColor
+        name
+      }
+    }
+
+    Admins: admins {
+      ...Admin
+    }
+
+    Redes: schoolNests {
+      ...SchoolNest
+      numberOfStudents
+      numberOfSchools
+    }
+
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

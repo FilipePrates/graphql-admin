@@ -1,0 +1,18 @@
+mutation CreateSchoolNest(
+  $Id: ID
+  $name: String!
+  $normalizedName: String!
+  $avatarUrl: String
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  CreateSchoolNest(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    avatarUrl: $avatarUrl
+    createdAt: $updatedAt
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

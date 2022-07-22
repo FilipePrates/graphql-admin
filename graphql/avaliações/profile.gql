@@ -1,0 +1,70 @@
+#import "./fragment.gql"
+#import "../turmas/fragment.gql"
+#import "../alunos/fragment.gql"
+
+query AssessmentProfile($id: ID!) {
+  profile: Assessment(id: $id) {
+    ...Assessment
+    questionsAnsweredCount
+    activeStudents
+    instructions
+    creator {
+      Id: id
+      email
+    }
+    Notas: assignedContext {
+      assignedContextId: id
+      grade
+      timeSpent
+      student {
+        Id: id
+        email
+        name
+        powerUpsInContext(contextId: $id)
+        powerUpsCount(contextId: $id)
+        questionsAnsweredCountInContext(contextId: $id)
+      }
+      createdAt {
+        createdAt: formatted
+      }
+      attempts
+      status
+    }
+
+    Alunos: students {
+      ...Student
+      Turmas: schoolClasses {
+        name
+      }
+      clientStatus
+    }
+
+    Turmas: schoolClass {
+      ...SchoolClass
+      Escolas: schools {
+        name
+      }
+      Admins: admins {
+        email
+      }
+      numberOfStudents
+    }
+    Questoes: questions {
+      order
+      maxGrade
+      Question {
+        Id: questionId
+        name
+        topic {
+          name
+          course {
+            name
+          }
+        }
+      }
+    }
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

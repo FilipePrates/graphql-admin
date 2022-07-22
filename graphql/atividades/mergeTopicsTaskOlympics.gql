@@ -1,0 +1,3 @@
+mutation mergeTopicsTaskOlympics($taskId: ID!, $topicsIds: [ID!]){
+    mergeTopicsTaskOlympics(taskId: $taskId, topicsIds: $topicsIds)
+}

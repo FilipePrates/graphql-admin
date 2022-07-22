@@ -1,0 +1,9 @@
+fragment Admin on Admin {
+  Id: id
+  name
+  email
+  role
+  createdAt {
+    createdAt: formatted
+  }
+}

@@ -1,0 +1,26 @@
+query IntrospectionQuery($typename: String!) {
+  __type(name: $typename) {
+    name
+    kind
+    enumValues(includeDeprecated: true) {
+      name
+    }
+    fields(includeDeprecated: true) {
+      name
+      type {
+        kind
+        name
+        enumValues {
+          name
+        }
+        ofType {
+          kind
+          name
+          enumValues {
+            name
+          }
+        }
+      }
+    }
+  }
+}

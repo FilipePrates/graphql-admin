@@ -1,0 +1,13 @@
+query GetTopicsByCourse($courseId: ID!) {
+  Topic(
+    filter: {
+      visible: true
+      course: { courseId: $courseId }
+      questions_not: null
+    }
+  ) {
+    name
+    Id: topicId
+    questionsCount
+  }
+}

@@ -1,0 +1,23 @@
+mutation UpdateProfessor(
+  $Id: ID!
+  $name: String
+  $normalizedName: String!
+  $email: String
+  $role: EducatorRole
+  $avatarUrl: String
+  $password: String
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateProfessor(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    email: $email
+    role: $role
+    password: $password
+    avatarUrl: $avatarUrl
+    updatedAt: $updatedAt
+  ) {
+    id
+  }
+}

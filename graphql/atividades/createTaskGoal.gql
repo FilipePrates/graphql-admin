@@ -1,0 +1,7 @@
+mutation CreateTaskGoal {
+  CreateTaskGoal(type: Points, value: 600) {
+    Id: id
+    type
+    value
+  }
+}

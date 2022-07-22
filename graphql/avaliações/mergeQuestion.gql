@@ -1,0 +1,20 @@
+mutation mergeQuestion(
+  $parentId: ID!
+  $childId: ID!
+  $createdAt: String!
+  $order: Int!
+  $maxGrade: Float!
+) {
+  MergeAssessmentQuestions(
+    from: { questionId: $childId }
+    to: { id: $parentId }
+    data: { order: $order, maxGrade: $maxGrade }
+  ) {
+    from {
+      questionId
+    }
+    to {
+      id
+    }
+  }
+}

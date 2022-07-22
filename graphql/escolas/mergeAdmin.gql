@@ -1,0 +1,10 @@
+mutation mergeAdmin($parentId: ID!, $childId: ID!) {
+  MergeSchoolAdmins(from: { id: $childId }, to: { schoolId: $parentId }) {
+    from {
+      id
+    }
+    to {
+      schoolId
+    }
+  }
+}

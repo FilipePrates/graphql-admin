@@ -1,0 +1,10 @@
+fragment SchoolNest on SchoolNest {
+  Id: id
+  name
+  createdAt {
+    createdAt: formatted
+  }
+  Admins: admins {
+    email
+  }
+}

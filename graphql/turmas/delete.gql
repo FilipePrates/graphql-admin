@@ -1,0 +1,5 @@
+mutation DeleteSchoolClass($Id: ID!) {
+  DeleteSchoolClass(schoolClassId: $Id) {
+    schoolClassId
+  }
+}

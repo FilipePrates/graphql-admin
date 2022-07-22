@@ -1,0 +1,16 @@
+fragment Task on Task {
+  Id: id
+  name
+  type
+  startDate {
+    startDate: formatted
+  }
+  endDate {
+    endDate: formatted
+  }
+#  status
+  isArchived
+  createdAt {
+    createdAt: formatted
+  }
+}

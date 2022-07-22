@@ -1,0 +1,51 @@
+{
+  "name": "graphl-admin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt -p 3000",
+    "serve": "nuxt -p 3000",
+    "build": "NODE_ENV=production nuxt build",
+    "staging": "VUE_APP_ENV=staging nuxt build",
+    "testing": "VUE_APP_ENV=testing nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "@bugsnag/js": "^7.11.0",
+    "@bugsnag/plugin-vue": "^7.11.0",
+    "@jovens-genios/vue-components": "^1.13.4",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "bcryptjs": "^2.4.3",
+    "child_process": "^1.0.2",
+    "core-js": "^3.8.3",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "export-from-json": "^1.3.9",
+    "fs": "0.0.1-security",
+    "graphql-tag": "^2.11.0",
+    "luxon": "^1.26.0",
+    "nuxt": "^2.14.12",
+    "prettier": "^2.2.1",
+    "unicon": "^0.2.1",
+    "uuid": "^8.3.2",
+    "vue-infinite-loading": "^2.4.5",
+    "vue-json-excel": "^0.3.0",
+    "vue-unicons": "^3.0.0",
+    "vuex-persist": "^3.1.3",
+    "xlsx": "^0.17.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/vuetify": "^1.11.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.8.0"
+  }
+}

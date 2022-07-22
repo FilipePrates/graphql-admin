@@ -1,0 +1,8 @@
+fragment Parent on Parent {
+  Id: id
+  name
+  email
+  createdAt {
+    createdAt: formatted
+  }
+}

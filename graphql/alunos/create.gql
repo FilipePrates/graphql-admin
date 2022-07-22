@@ -1,0 +1,31 @@
+#import "./fragment.gql"
+
+mutation CreateStudent(
+  $Id: ID!
+  $name: String!
+  $normalizedName: String!
+  $nickname: String
+  $birthday: _Neo4jDateTimeInput
+  $parentFullName: String
+  $email: String!
+  $avatarUrl: String
+  $password: String!
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  CreateStudent(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    nickname: $nickname
+    birthday: $birthday
+    email: $email
+    parentFullName: $parentFullName
+    schoolYear: 6
+    avatarUrl: $avatarUrl
+    password: $password
+    createdAt: $updatedAt
+    updatedAt: $updatedAt
+  ) {
+    ...Student
+  }
+}

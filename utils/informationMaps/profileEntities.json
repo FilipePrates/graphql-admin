@@ -1,0 +1,13 @@
+{
+  "entities": [
+    { "text": "Redes", "to": "/lista/redes", "disabled": false },
+    { "text": "Escolas", "to": "/lista/escolas", "disabled": false },
+    { "text": "Turmas", "to": "/lista/turmas", "disabled": false },
+    { "text": "Alunos", "to": "/lista/alunos", "disabled": false },
+    { "text": "Educadores", "to": "/lista/educadores", "disabled": false },
+    { "text": "Responsáveis", "to": "/lista/responsaveis", "disabled": false },
+    { "text": "Admins", "to": "/lista/admins", "disabled": false },
+    { "text": "Atividades", "to": "/lista/atividades", "disabled": false },
+    { "text": "Avaliações", "to": "/lista/avaliações", "disabled": false }
+  ]
+}

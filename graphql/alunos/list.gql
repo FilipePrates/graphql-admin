@@ -1,0 +1,22 @@
+#import "./fragment.gql"
+
+query StudentList(
+  $first: Int
+  $offset: Int
+  $orderBy: [_StudentOrdering]
+  $filter: _StudentFilter
+) {
+  list: Student(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...Student
+    Turmas: schoolClasses {
+      name
+    }
+    points
+    clientStatus
+  }
+}

@@ -1,0 +1,30 @@
+query GetTask(
+    $id: ID!
+) {
+    Task(id: $id) {
+        id
+        name
+        description
+        status
+        pointsMade
+        createdAt{formatted}
+        startDate {formatted}
+        endDate{formatted}
+        topics{
+        name
+        knowledgeAreas{
+            name
+        }
+        abilities{
+            name
+        }
+        }
+         creator{
+            name
+            email
+        }
+        schoolClass{
+            name
+        }
+    }
+}

@@ -1,0 +1,9 @@
+mutation UpdateSchool(
+  $Id: ID!
+  $isFrozen: Boolean
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  UpdateSchool(schoolId: $Id, isFrozen: $isFrozen, updatedAt: $updatedAt) {
+    schoolId
+  }
+}

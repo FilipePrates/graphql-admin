@@ -1,0 +1,29 @@
+query getStudentAnswers($id: ID!) {
+  Student(id: $id) {
+    id
+    Respostas: questionsAnswered {
+      studentAnswerId
+      points
+      bonusPoints
+      question {
+        questionId
+        topic {
+          course {
+            name
+          }
+          name
+        }
+      }
+      fraction
+      assignedContext {
+        context {
+          Id: id
+          name
+        }
+      }
+      createdAt {
+        formatted
+      }
+    }
+  }
+}

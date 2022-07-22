@@ -1,0 +1,26 @@
+#import "./fragment.gql"
+
+mutation CreateAdmin(
+  $Id: ID!
+  $name: String!
+  $normalizedName: String!
+  $email: String!
+  $avatarUrl: String
+  $role: AdminRole
+  $password: String!
+  $updatedAt: _Neo4jDateTimeInput!
+) {
+  CreateAdmin(
+    id: $Id
+    name: $name
+    normalizedName: $normalizedName
+    email: $email
+    role: $role
+    avatarUrl: $avatarUrl
+    password: $password
+    createdAt: $updatedAt
+    updatedAt: $updatedAt
+  ) {
+    ...Admin
+  }
+}

@@ -1,0 +1,88 @@
+query NationalOlympicProfile(
+  $id: ID!
+  $sinceDate: String!
+  $now: String!
+  $first: Int
+  $offset: Int
+  $schoolClassId: ID
+  $schoolId: ID
+) {
+  profile: Task(id: $id) {
+    Id: id
+    name
+    type
+    startDate {
+      startDate: formatted
+    }
+    endDate {
+      endDate: formatted
+    }
+    isArchived
+    createdAt {
+      createdAt: formatted
+    }
+    pointsMade
+    description
+    activeStudents
+    questionsAnsweredCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+    Ranking: ranking(
+      first: $first
+      offset: $offset
+      schoolClassId: $schoolClassId
+      schoolId: $schoolId
+    ) {
+      position
+      email
+      points
+    }
+    Ranking_Turmas: schoolClassRanking(first: $first, offset: $offset) {
+      position
+      name
+      points
+      pointsAverage
+    }
+    Ranking_Escolas: schoolRanking(first: $first, offset: $offset) {
+      position
+      name
+      points
+      pointsAverage
+    }
+    Alunos: students(
+      orderBy: completedNationalOlympicsMissionsCount_desc
+      first: $first
+      offset: $offset
+    ) {
+      Id: id
+      name
+
+      schoolClasses {
+        name
+        school {
+          name
+        }
+      }
+      correctQuestionsAnsweredPercentageInContext(contextId: $id)
+      questionsAnsweredCount(createdAt_gte: $sinceDate, createdAt_lte: $now)
+      completedNationalOlympicsMissionsCount
+    }
+    Turmas: schoolClass {
+      Id: schoolClassId
+      name
+      school {
+        name
+      }
+      numberOfStudents
+      completedNationalOlympicsMissionsCountAverage
+    }
+    Escolas: schools {
+      Id: schoolId
+      name
+      numberOfStudents
+      numberOfSchoolClasses
+      completedNationalOlympicsMissionsCountAverage
+    }
+    updatedAt {
+      updatedAt: formatted
+    }
+  }
+}

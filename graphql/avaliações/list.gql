@@ -1,0 +1,23 @@
+#import "./fragment.gql"
+
+query AssessmentList(
+  $first: Int
+  $offset: Int
+  $orderBy: [_AssessmentOrdering]
+  $filter: _AssessmentFilter
+) {
+  list: Assessment(
+    filter: $filter
+    first: $first
+    offset: $offset
+    orderBy: $orderBy
+  ) {
+    ...Assessment
+    creator {
+      email
+    }
+    schoolClass {
+      name
+    }
+  }
+}

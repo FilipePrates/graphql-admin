@@ -1,0 +1,6 @@
+query ParentList($filter: _ParentFilter, $first: Int, $offset: Int) {
+  list: Parent(filter: $filter, first: $first, offset: $offset) {
+    Id: id
+    name
+  }
+}

@@ -1,0 +1,13 @@
+mutation removeKnowledgeArea($parentId: ID!, $childId: ID!) {
+  RemoveProfessorKnowledgeAreas(
+    from: { id: $parentId }
+    to: { knowledgeAreaId: $childId }
+  ) {
+    from {
+      id
+    }
+    to {
+      knowledgeAreaId
+    }
+  }
+}
