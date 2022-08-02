@@ -293,9 +293,9 @@ import EmptyState from "~/components/EmptyState.vue";
 
 export default {
   props: {
-    headers: {
-      type: Array,
-      default: () => [],
+    type: {
+      type: String,
+      default: () => "",
     },
     rows: {
       type: Array,
@@ -308,6 +308,10 @@ export default {
     selected: {
       type: Array,
       default: () => [],
+    },
+    context: {
+      type: String,
+      default: () => "",
     },
     sinceDate: {
       type: String,
@@ -353,6 +357,12 @@ export default {
   },
 
   computed: {
+    formattedElements() {
+      return this.computeDataTableRows(this.rows);
+    },
+    headers() {
+      return this.getDataTableHeaders(this.context, this.type);
+    },
     searchedRows() {
       var results = [];
       let trimSearchTerm = this.trimString(this.searchTerm); // trim it
@@ -375,12 +385,23 @@ export default {
       }
       return results;
     },
-    type() {
-      return this.$route.params.type;
-    },
+    // type() {
+    //   return this.$route.params.type;
+    // },
   },
 
   methods: {
+    typeTo__typename(s) {
+      return utils.typeTo__typename(s);
+    },
+
+    getDataTableHeaders(context, type) {
+      console.log(context);
+      return utils.getDataTableHeaders(context, this.typeTo__typename(type));
+    },
+    computeDataTableRows(r) {
+      return utils.computeDataTableRows(r);
+    },
     __typenameToType(s) {
       return utils.__typenameToType(s);
     },
@@ -552,6 +573,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.type);
     document.addEventListener("mousedown", () => (this.drag = false));
     document.addEventListener("mousemove", () => (this.drag = true));
   },

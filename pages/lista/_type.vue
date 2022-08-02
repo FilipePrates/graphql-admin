@@ -96,11 +96,11 @@
     <div v-if="list" class="d-flex fit-screen px-4">
       <data-table
         v-if="list.length > 0"
-        :headers="getDataTableHeaders('list', type)"
+        :type="type"
         :selected="selectedElements"
-        :rows="computeDataTableRows(list)"
+        :rows="list"
         :sinceDate="sinceDate"
-        :untilDate="now"
+        context="list"
         @changedSelected="changedSelected"
         @copiedText="$nuxt.$emit('copiedText')"
       />
@@ -212,7 +212,6 @@ export default {
         console.error("We've got an error!", error);
         localStorage.removeItem("apollo-token");
         this.$router.push("/login");
-        
       },
       fetchPolicy: "cache-and-network",
     },
@@ -232,7 +231,6 @@ export default {
         console.error("We've got an error!", error);
         localStorage.removeItem("apollo-token");
         this.$router.push("/login");
-        
       },
       fetchPolicy: "cache-and-network",
     },
@@ -505,15 +503,6 @@ export default {
     },
     updatedFilter(filterObj) {
       this.filter = filterObj.filter;
-    },
-    flatten(obj) {
-      return utils.flatten(obj);
-    },
-    getDataTableHeaders(context, type) {
-      return utils.getDataTableHeaders(context, this.typeTo__typename(type));
-    },
-    computeDataTableRows(r) {
-      return utils.computeDataTableRows(r);
     },
     routerReplace(args) {
       return utils.routerReplace(this, args);

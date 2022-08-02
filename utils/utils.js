@@ -3,7 +3,7 @@ const profileInfo = require("./informationMaps/profileInfo.json");
 const tableHeaders = require("./informationMaps/tableHeaders.json");
 const editableProperties = require("./informationMaps/editableProperties.json");
 
-const translation = require("./informationMaps/translation.json");
+const translation = require("./translation.json");
 
 // TODO remover
 const __typenameMap = require("./__typenameMap.json");

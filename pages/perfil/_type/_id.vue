@@ -304,13 +304,22 @@
       <v-tab-item v-for="key in getProfileTabs(profile)" :key="key">
         <v-row>
           <v-col>
+            <!-- v-if="list.length > 0"
+        :type="type"
+        :selected="selectedElements"
+        :rows="list"
+        :sinceDate="sinceDate"
+        context="list"
+        @changedSelected="changedSelected"
+        @copiedText="$nuxt.$emit('copiedText')" -->
+
             <data-table
               v-if="profile[0][key].length > 0"
-              :headers="getDataTableHeaders('profile', key)"
-              :rows="computeDataTableRows(profile[0][key])"
+              :type="profile[0][key].__typename"
+              :rows="profile[0][key]"
               :selected="selectedElements[tab]"
               :sinceDate="sinceDate"
-              :untilDate="now"
+              context="profile"
               @changedSelected="changedSelected"
               @copiedText="$nuxt.$emit('copiedText')"
               isProfile
