@@ -1,4 +1,5 @@
 export { default as AvailableCoursesTags } from '../../components/AvailableCoursesTags.vue'
+export { default as BookLoader } from '../../components/BookLoader.vue'
 export { default as ChangeAssessmentSchoolClass } from '../../components/ChangeAssessmentSchoolClass.vue'
 export { default as ChipButton } from '../../components/ChipButton.vue'
 export { default as DataTable } from '../../components/DataTable.vue'
@@ -12,7 +13,6 @@ export { default as FormDateTimePicker } from '../../components/FormDateTimePick
 export { default as FormSchoolClassPicker } from '../../components/FormSchoolClassPicker.vue'
 export { default as FormSchoolPicker } from '../../components/FormSchoolPicker.vue'
 export { default as FormTopicSelector } from '../../components/FormTopicSelector.vue'
-export { default as JGLoader } from '../../components/JGLoader.vue'
 export { default as ProfileActions } from '../../components/ProfileActions.vue'
 export { default as TheAppBar } from '../../components/TheAppBar.vue'
 export { default as TheForm } from '../../components/TheForm.vue'

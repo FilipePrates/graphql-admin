@@ -168,7 +168,9 @@
       justify="center"
       class="text-center"
     >
-      <v-col cols="2"> <empty-state type="emptyContent" class="my-4" /> </v-col>
+      <v-col cols="2">
+        <empty-state />
+      </v-col>
     </v-row>
     <v-dialog v-model="dialogViewPointTransaction" max-width="50vw">
       <v-card>

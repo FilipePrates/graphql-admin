@@ -2,6 +2,9 @@
   "AvailableCoursesTags": {
     "description": "Auto imported from components/AvailableCoursesTags.vue"
   },
+  "BookLoader": {
+    "description": "Auto imported from components/BookLoader.vue"
+  },
   "ChangeAssessmentSchoolClass": {
     "description": "Auto imported from components/ChangeAssessmentSchoolClass.vue"
   },
@@ -40,9 +43,6 @@
   },
   "FormTopicSelector": {
     "description": "Auto imported from components/FormTopicSelector.vue"
-  },
-  "JGLoader": {
-    "description": "Auto imported from components/JGLoader.vue"
   },
   "ProfileActions": {
     "description": "Auto imported from components/ProfileActions.vue"

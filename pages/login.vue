@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import Loader from "~/components/JGLoader.vue";
+import Loader from "~/components/BookLoader.vue";
 
 export default {
   data() {

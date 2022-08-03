@@ -108,7 +108,7 @@
       />
       <v-row justify="center" v-else>
         <v-col cols="4">
-          <empty-state type="emptySearch" class="my-8" />
+          <empty-state class="my-3" />
         </v-col>
       </v-row>
     </div>
@@ -132,7 +132,7 @@ import DataTable from "~/components/DataTable.vue";
 import DataTableHeader from "~/components/DataTableHeader.vue";
 import EmptyState from "~/components/EmptyState.vue";
 import FilterTab from "~/components/FilterTab.vue";
-import Loader from "~/components/JGLoader.vue";
+import Loader from "~/components/BookLoader.vue";
 import utils from "~/utils/utils.js";
 
 export default {

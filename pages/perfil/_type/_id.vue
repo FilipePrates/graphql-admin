@@ -326,11 +326,7 @@
               isProfile
             >
             </data-table>
-            <empty-state
-              v-else-if="!loading"
-              type="emptyContent"
-              class="my-4"
-            />
+            <empty-state v-else-if="!loading" />
             <loader
               v-if="loading"
               style="position: fixed; top: 80%; left: 50%"
@@ -375,7 +371,7 @@ import DataTableHeader from "~/components/DataTableHeader.vue";
 import DataTable from "~/components/DataTable.vue";
 import EmptyState from "~/components/EmptyState.vue";
 import FilterTab from "~/components/FilterTab.vue";
-import Loader from "~/components/JGLoader.vue";
+import Loader from "~/components/BookLoader.vue";
 import ProfileActions from "~/components/ProfileActions.vue";
 import utils from "~/utils/utils.js";
 

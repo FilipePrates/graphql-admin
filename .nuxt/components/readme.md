@@ -7,6 +7,7 @@ You can directly use them in pages and other components without the need to impo
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
 - `<AvailableCoursesTags>` | `<available-courses-tags>` (components/AvailableCoursesTags.vue)
+- `<BookLoader>` | `<book-loader>` (components/BookLoader.vue)
 - `<ChangeAssessmentSchoolClass>` | `<change-assessment-school-class>` (components/ChangeAssessmentSchoolClass.vue)
 - `<ChipButton>` | `<chip-button>` (components/ChipButton.vue)
 - `<DataTable>` | `<data-table>` (components/DataTable.vue)
@@ -20,7 +21,6 @@ You can directly use them in pages and other components without the need to impo
 - `<FormSchoolClassPicker>` | `<form-school-class-picker>` (components/FormSchoolClassPicker.vue)
 - `<FormSchoolPicker>` | `<form-school-picker>` (components/FormSchoolPicker.vue)
 - `<FormTopicSelector>` | `<form-topic-selector>` (components/FormTopicSelector.vue)
-- `<JGLoader>` | `<j-g-loader>` (components/JGLoader.vue)
 - `<ProfileActions>` | `<profile-actions>` (components/ProfileActions.vue)
 - `<TheAppBar>` | `<the-app-bar>` (components/TheAppBar.vue)
 - `<TheForm>` | `<the-form>` (components/TheForm.vue)

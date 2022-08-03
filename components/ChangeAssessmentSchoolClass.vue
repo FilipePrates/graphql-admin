@@ -52,7 +52,7 @@
 import jgLib from "@jovens-genios/vue-components";
 import { v4 as uuidv4 } from "uuid";
 import { DateTime } from "luxon";
-import Loader from "~/components/JGLoader.vue";
+import Loader from "~/components/BookLoader.vue";
 import utils from "~/utils/utils.js";
 
 export default {

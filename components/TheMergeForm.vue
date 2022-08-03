@@ -11,21 +11,22 @@
             ></unicon>
           </v-btn> </v-col
       ></v-row>
-        <v-row v-if="topics.length">
-          <v-col>
-             <div v-for="topic in topics" :key="topic.name">
-                <v-chip class="mt-2">{{topic.name}}
-                    <unicon
-                    style="cursor:pointer;"
-                    @click="removeTopic(topic)"
-                      name="times"
-                      fill="#0D47A1"
-                      class="pa-0 text-center"
-                    ></unicon>
-                </v-chip>
-              </div>
-          </v-col>
-        </v-row>
+      <v-row v-if="topics.length">
+        <v-col>
+          <div v-for="topic in topics" :key="topic.name">
+            <v-chip class="mt-2"
+              >{{ topic.name }}
+              <unicon
+                style="cursor: pointer"
+                @click="removeTopic(topic)"
+                name="times"
+                fill="#0D47A1"
+                class="pa-0 text-center"
+              ></unicon>
+            </v-chip>
+          </div>
+        </v-col>
+      </v-row>
 
       <v-row v-if="list" justify="center" no-gutters class="my-8">
         <v-col cols="8">
@@ -44,12 +45,9 @@
             hide-details="true"
           >
             <ul slot="item" slot-scope="data">
-              <li  @click="topics.push(data.item)"
-                style="list-style:none"
-                >
+              <li @click="topics.push(data.item)" style="list-style: none">
                 {{ data.item.name }}
               </li>
-            
             </ul>
           </v-autocomplete>
         </v-col>
@@ -88,7 +86,7 @@
 <script>
 import utils from "~/utils/utils.js";
 import jgLib from "@jovens-genios/vue-components";
-import Loader from "~/components/JGLoader.vue";
+import Loader from "~/components/BookLoader.vue";
 
 export default {
   props: ["parent", "typename"],
@@ -99,7 +97,7 @@ export default {
       interval: null,
       loading: 0,
       mergeSchoolClassStudents: false,
-      topics:[]
+      topics: [],
     };
   },
   computed: {
@@ -221,13 +219,13 @@ export default {
       });
       this.close();
     },
-    removeTopic(topic){
-      let index = this.Ids.indexOf(topic.Id)
-      this.Ids.splice(index,1)
+    removeTopic(topic) {
+      let index = this.Ids.indexOf(topic.Id);
+      this.Ids.splice(index, 1);
 
-      index = this.topics.indexOf(topic.id)
-      this.topics.splice(index,1)
-    }
+      index = this.topics.indexOf(topic.id);
+      this.topics.splice(index, 1);
+    },
   },
 };
 </script>
