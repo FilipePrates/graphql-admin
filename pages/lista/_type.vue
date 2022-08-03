@@ -96,7 +96,7 @@
     <div v-if="list" class="d-flex fit-screen px-4">
       <data-table
         v-if="list.length > 0"
-        :type="type"
+        :type="typeTo__typename(this.type)"
         :selected="selectedElements"
         :rows="list"
         :sinceDate="sinceDate"

@@ -79,7 +79,7 @@
               depressed
               @click.stop.prevent="navigateNewTab(item)"
             >
-              <unicon name="arrow-up-right" fill="#2E84E5"></unicon>
+              <unicon name="arrow-up-right" fill="grey"></unicon>
             </v-btn>
           </a>
         </template>
@@ -98,7 +98,7 @@
             depressed
             @click.stop="getActiveStudents(item)"
           >
-            <unicon name="cloud-download" fill="#2E84E5"></unicon>
+            <unicon name="cloud-download" fill="grey"></unicon>
           </v-btn>
           <span v-else>{{
             (activeStudentsPercentage[item.Id] * 100).toFixed(1) + "%"
@@ -119,7 +119,7 @@
             depressed
             @click.stop="getPointsMade(item)"
           >
-            <unicon name="cloud-download" fill="#2E84E5"></unicon>
+            <unicon name="cloud-download" fill="grey"></unicon>
           </v-btn>
           <span v-else>{{ tasksPointsMade[item.Id] }}</span>
         </template>
@@ -133,7 +133,7 @@
             depressed
             @click.stop="copy(item.Id)"
           >
-            <unicon name="copy-alt" fill="#2E84E5"></unicon>
+            <unicon name="copy-alt" fill="grey"></unicon>
           </v-btn>
         </template>
         <template v-slot:[`item.Assessment.Id`]="{ item }">
@@ -145,7 +145,7 @@
             depressed
             @click.stop="copy(item['Assessment.Id'])"
           >
-            <unicon name="copy-alt" fill="#2E84E5"></unicon>
+            <unicon name="copy-alt" fill="grey"></unicon>
           </v-btn>
         </template>
         <template v-slot:[`item.view`]="{ item }">
@@ -157,7 +157,7 @@
             depressed
             @click.stop="viewElement(item)"
           >
-            <unicon name="search" fill="#2E84E5"></unicon>
+            <unicon name="search" fill="grey"></unicon>
           </v-btn>
         </template>
       </v-data-table>
@@ -213,7 +213,7 @@
         v-if="['Atividade', 'Task'].includes(viewingContextTypename)"
         :to="'/perfil/atividades/' + viewingContextId"
         >Ir para perfil da atividade
-        <unicon class="mt-1" name="arrow-right" fill="#2E84E5"></unicon>
+        <unicon class="mt-1" name="arrow-right" fill="grey"></unicon>
       </v-btn>
     </v-dialog>
     <v-dialog v-model="dialogViewNationalOlympicsTopics" max-width="50vw">
@@ -396,8 +396,7 @@ export default {
     },
 
     getDataTableHeaders(context, type) {
-      console.log(context);
-      return utils.getDataTableHeaders(context, this.typeTo__typename(type));
+      return utils.getDataTableHeaders(context, type);
     },
     computeDataTableRows(r) {
       return utils.computeDataTableRows(r);
@@ -521,7 +520,7 @@ export default {
     navigateNewTabLink(item) {
       return this.isProfile
         ? `/perfil/${utils.__typenameToType(item.__typename)}/${item.Id}`
-        : `/perfil/${this.type}/${item.Id}`;
+        : `/perfil/${utils.__typenameToType(this.type)}/${item.Id}`;
     },
     navigate(o) {
       if (!this.drag) {
@@ -556,7 +555,7 @@ export default {
                 query: query,
               })
             : this.routerReplace({
-                path: `/perfil/${this.type}/${o.Id}`,
+                path: `/perfil/${utils.__typenameToType(this.type)}/${o.Id}`,
                 query: query,
               });
         }
@@ -573,7 +572,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.type);
+    console.log("a", this.type, this.context);
     document.addEventListener("mousedown", () => (this.drag = false));
     document.addEventListener("mousemove", () => (this.drag = true));
   },
