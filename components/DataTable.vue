@@ -52,7 +52,7 @@
             text
             style="height: 100%"
           >
-            <v-btn fab depressed color="blue-4" height="30px" width="30px">
+            <v-btn fab depressed color="grey-2" height="30px" width="30px">
               <v-icon class="white--text text-body-2"> mdi-check </v-icon>
             </v-btn>
           </v-btn>
@@ -87,7 +87,7 @@
         <template v-slot:[`item.activeStudentsPercentage`]="{ item }">
           <v-progress-circular
             v-if="loadingActiveStudents.includes(item.Id)"
-            color="blue-6"
+            color="primary-1"
             size="25"
             indeterminate
           ></v-progress-circular>
@@ -108,7 +108,7 @@
         <template v-slot:[`item.pointsMade`]="{ item }">
           <v-progress-circular
             v-if="loadingTasksPointsMade.includes(item.Id)"
-            color="blue-6"
+            color="primary-1"
             size="25"
             indeterminate
           ></v-progress-circular>
@@ -192,7 +192,7 @@
                   v-for="(answer, i) in data.Question[0].answers"
                   v-html="answer.text"
                   :key="i"
-                  :color="answer.fraction ? 'blue-6' : '#fffffff'"
+                  :color="answer.fraction ? 'primary-1' : '#fffffff'"
                   class="pa-1 ma-1"
                 >
                 </v-card>
@@ -209,7 +209,7 @@
         </ApolloQuery>
       </v-card>
       <v-btn
-        color="blue-6"
+        color="primary-1"
         v-if="['Atividade', 'Task'].includes(viewingContextTypename)"
         :to="'/perfil/atividades/' + viewingContextId"
         >Ir para perfil da atividade

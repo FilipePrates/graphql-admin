@@ -51,10 +51,10 @@
         <v-col cols="2">
           <v-btn
             @click="search()"
-            class="ml-4 blue-2--text"
+            class="ml-4 white--text"
             depressed
             style="text-transform: none !important"
-            color="blue-8"
+            color="grey-2"
             height="56"
           >
             <div class="d-flex align-center">

@@ -9,7 +9,7 @@
             v-on="on"
             :disabled="selectedElements.length === 0"
             class="white--text mx-1"
-            color="blue-5"
+            color="grey-2"
             depressed
             small
             fab
@@ -29,7 +29,7 @@
             @click="emitElementAction('Editar')"
             v-bind="attrs"
             v-on="on"
-            color="blue-5"
+            color="grey-2"
             class="white--text mx-1"
             depressed
             fab
@@ -55,7 +55,7 @@
             @click="emitElementAction('Deletar')"
             v-bind="attrs"
             v-on="on"
-            color="blue-5"
+            color="grey-2"
             class="white--text mx-1"
             depressed
             fab
@@ -78,7 +78,7 @@
             @click="emitElementAction('Congelar')"
             v-bind="attrs"
             v-on="on"
-            color="blue-5"
+            color="grey-2"
             class="white--text mx-1"
             depressed
             fab
@@ -101,7 +101,7 @@
             @click="emitElementAction('Descongelar')"
             v-bind="attrs"
             v-on="on"
-            color="blue-5"
+            color="grey-2"
             class="white--text mx-1"
             depressed
             fab
@@ -125,7 +125,7 @@
             @click="emitExportAction"
             v-bind="attrs"
             v-on="on"
-            color="blue-5"
+            color="grey-2"
             class="white--text mx-1"
             depressed
             fab
@@ -149,7 +149,7 @@
             @click="emitElementAction('Resetar Senha')"
             v-bind="attrs"
             v-on="on"
-            color="blue-5"
+            color="grey-2"
             class="white--text mx-1"
             depressed
             fab
@@ -210,7 +210,7 @@
           >
             <unicon
               name="file-import"
-              fill="#000000"
+              fill="#404040"
               class="pa-0 text-center"
             ></unicon>
           </v-btn>
@@ -262,7 +262,7 @@
                 @click="clearSelectedElements()"
                 v-bind="attrs"
                 v-on="on"
-                color="blue-5"
+                color="grey-2"
                 class="white--text mx-1"
                 depressed
                 fab
@@ -285,7 +285,7 @@
                 @click="clearSelectedElements()"
                 v-bind="attrs"
                 v-on="on"
-                color="blue-5"
+                color="grey-2"
                 class="white--text mx-1"
                 depressed
                 fab
@@ -314,7 +314,7 @@
                 v-bind="attrs"
                 v-on="on"
                 :disabled="isEditDisabled(actionName)"
-                color="blue-5"
+                color="grey-2"
                 class="white--text mx-1"
                 depressed
                 fab
@@ -579,7 +579,7 @@
           v-if="loading"
           indeterminate
           class="mt-3"
-          color="blue-6"
+          color="grey-2"
         ></v-progress-circular>
       </v-row>
     </v-col>

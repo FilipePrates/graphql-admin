@@ -7,15 +7,15 @@
             <v-col cols="10">
               <v-row no-gutters>
                 <v-col cols="3">
-                  <v-progress-circular value="100" size="100" color="blue-5">
+                  <v-progress-circular value="100" size="100" color="primary-1">
                     <v-avatar size="90">
                       <img
                         v-if="profile[0].avatarUrl"
-                        class="my-auto mx-4"
+                        class="mx-4"
                         :src="profile[0].avatarUrl"
                         alt=""
                       />
-                      <img v-else class="my-auto mx-4" src="/logo.png" alt="" />
+                      <img v-else class="mx-4" src="/logo.png" alt="" />
                     </v-avatar>
                   </v-progress-circular>
                 </v-col>
@@ -164,7 +164,7 @@
                   depressed
                   @click.stop.prevent="navigateNewTab(profile[0])"
                 >
-                  <unicon name="arrow-up-right" fill="#2E84E5"></unicon>
+                  <unicon name="arrow-up-right" fill="grey"></unicon>
                 </v-btn>
               </a>
               {{
@@ -264,7 +264,7 @@
         v-if="profile"
         v-model="tab"
         background-color="transparent"
-        color="blue-5"
+        color="primary-1"
         grow
       >
         <v-tab v-for="key in getProfileTabs(profile)" :key="`tab-${key}`">
@@ -788,7 +788,7 @@ export default {
   font-size: 16px;
   line-height: 150%;
   text-align: center;
-  color: #082d66;
+  color: #282828;
 }
 
 .profile-prop-name {
@@ -844,7 +844,7 @@ export default {
   font-size: 16px;
   line-height: 150%;
   text-align: center;
-  color: #5c9ce5;
+  color: #293231;
 }
 .profile-type {
   font-family: Rubik;

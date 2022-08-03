@@ -6,12 +6,12 @@
       {
         "prop": "questionsAnsweredCount",
         "extra": "Questões Feitas",
-        "color": "#5C9CE5"
+        "color": "primary-2"
       },
       {
         "prop": "correctQuestionsAnsweredCount",
         "extra": "Corretas",
-        "color": "#5C9CE5"
+        "color": "primary-2"
       }
     ]
   },
@@ -19,11 +19,11 @@
     "header": ["Id", "email", "role", "tasksCount", "assessmentsCount"],
     "chips": [],
     "rects": [
-      { "prop": "tasksCount", "extra": "Atividades", "color": "#5C9CE5" },
+      { "prop": "tasksCount", "extra": "Atividades", "color": "primary-2" },
       {
         "prop": "activeTasksCount",
         "extra": "Atividades Ativas",
-        "color": "#5C9CE5"
+        "color": "primary-2"
       }
     ]
   },
@@ -45,11 +45,11 @@
       { "prop": "Redes", "color": "#89B4E5" }
     ],
     "rects": [
-      { "prop": "numberOfStudents", "extra": "Alunos", "color": "#5C9CE5" },
+      { "prop": "numberOfStudents", "extra": "Alunos", "color": "primary-2" },
       {
         "prop": "activeStudents",
         "extra": "Ativos",
-        "color": "#5C9CE5",
+        "color": "primary-2",
         "isBtn": true
       }
     ]
@@ -70,11 +70,11 @@
       { "prop": "clientStatus", "color": "#FAC8C8", "expected": "CHURN" }
     ],
     "rects": [
-      { "prop": "numberOfStudents", "extra": "Alunos", "color": "#5C9CE5" },
+      { "prop": "numberOfStudents", "extra": "Alunos", "color": "primary-2" },
       {
         "prop": "activeStudents",
         "extra": "Ativos",
-        "color": "#5C9CE5",
+        "color": "primary-2",
         "isBtn": true
       }
     ]
@@ -108,12 +108,12 @@
       {
         "prop": "questionsAnsweredCount",
         "extra": "Questões Feitas",
-        "color": "#5C9CE5"
+        "color": "primary-2"
       },
       {
         "prop": "activeStudents",
         "extra": "Alunos Ativos",
-        "color": "#5C9CE5"
+        "color": "primary-2"
       }
     ]
   },
@@ -134,7 +134,7 @@
       {
         "prop": "activeStudents",
         "extra": "Alunos Ativos",
-        "color": "#5C9CE5"
+        "color": "primary-2"
       }
     ]
   },

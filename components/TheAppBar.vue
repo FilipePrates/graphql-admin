@@ -1,14 +1,7 @@
 <template>
   <div class="appbar primary-2 d-flex">
     <div class="fit-screen mx-auto d-flex">
-      <img
-        v-if="!loading"
-        class="my-auto mx-4"
-        src="FilipePrates/.png"
-        alt=""
-        height="60px"
-        width="60px"
-      />
+      <img v-if="!loading" class="mx-4 fill-height" src="/logo.png" alt="" />
       <v-btn-toggle v-if="!loading" class="fill-height" tile group borderless>
         <v-btn
           to="/"
@@ -37,7 +30,7 @@
       </v-btn-toggle>
       <v-progress-linear
         v-else
-        class="my-auto mx-4"
+        class="mx-4"
         indeterminate
         color="primary"
       ></v-progress-linear>
@@ -50,11 +43,11 @@ import utils from "~/utils/utils.js";
 
 export default {
   props: ["loading"],
-  computed:{
-    profileEntities(){
-      return utils.profileEntities
-    }
-  }
+  computed: {
+    profileEntities() {
+      return utils.profileEntities;
+    },
+  },
 };
 </script>
 

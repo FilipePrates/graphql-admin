@@ -7,13 +7,6 @@
     "_name": "_d7c7fc9c"
   },
   {
-    "name": "olimpiada-nacional",
-    "path": "/olimpiada-nacional",
-    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/olimpiada-nacional.vue",
-    "chunkName": "pages/olimpiada-nacional",
-    "_name": "_5206ac1a"
-  },
-  {
     "name": "lista-type",
     "path": "/lista/:type?",
     "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/lista/_type.vue",

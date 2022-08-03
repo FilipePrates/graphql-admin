@@ -324,7 +324,15 @@
       "chest.keysRequired"
     ],
     "TrophyTransaction": ["createdAt.formatted", "battle.type", "quantity"],
-    "Item": ["name", "type", "rarity", "level.name"]
+    "Item": ["name", "type", "rarity", "level.name"],
+    "RankingPosition": [
+      "position",
+      "name",
+      "email",
+      "schoolYear",
+      "belongsTo",
+      "points"
+    ]
   },
   "nationalOlympics": {
     "Ranking Alunos": [
