@@ -29,6 +29,7 @@
             @input="setSearchProp"
             v-model="searchProperty"
             style="z-index: 11"
+            color="primary-1"
             class="mr-4"
             full-width
             outlined
@@ -38,6 +39,7 @@
         <v-col cols="2" v-if="possibleOrderByOptions">
           <v-select
             style="z-index: 11"
+            color="primary-1"
             v-model="orderBy"
             prepend-inner-icon="mdi-magnify"
             placeholder="Ordernar por"
@@ -562,3 +564,13 @@ export default {
   },
 };
 </script>
+
+<style>
+.v-list .v-list-item--active {
+  background-color: #282828 !important;
+}
+
+.v-list .v-list-item--active .v-list-item__title {
+  color: #ffffff !important;
+}
+</style>

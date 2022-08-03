@@ -32,7 +32,7 @@
 
 <style scoped>
 .book {
-  --color: #179995;
+  --color: #181818;
   --duration: 6.8s;
   width: 32px;
   height: 12px;
