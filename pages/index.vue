@@ -25,7 +25,7 @@
               <v-combobox
                 v-model="mainNodeLabels"
                 multiple
-                :items="data"
+                :items="nodeLabels"
                 item-text="name"
                 item-value="name"
                 label="Choose the main nodes"
@@ -55,7 +55,7 @@ export default {
     return {
       loading: false,
       toggleIframe: true,
-      data: undefined,
+      nodeLabels: undefined,
       mainNodeLabels: [],
     };
   },
@@ -70,9 +70,11 @@ export default {
       const { data } = await this.$apollo.query({
         query: require("~/graphql/nodeLabels.gql"),
       });
-      this.data = data.__schema.types.filter(
-        (t) => t.kind == "OBJECT" && !t.name.startsWith("_")
-      );
+      this.nodeLabels = data.__schema.types
+        .filter((t) => t.kind == "OBJECT" && !t.name.startsWith("_"))
+        .sort((a, b) => (a.name > b.name ? 1 : -1));
+      console.log(this.nodeLabels);
+      this.$store.commit("setNodeLabels", this.nodeLabels);
       this.loading = false;
     },
   },

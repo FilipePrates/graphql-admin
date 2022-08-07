@@ -25,6 +25,7 @@ export const state = () => ({
   user: {},
   feedBackText: "",
   feedBackDialog: false,
+  nodeLabels: [],
 });
 export const getters = {
   getUser(state) {
@@ -36,6 +37,9 @@ export const getters = {
   getFeedBackDialog(state) {
     return state.feedBackDialog;
   },
+  getNodeLabels(state) {
+    return state.nodeLabels;
+  },
 };
 export const mutations = {
   setUser(state, payload) {
@@ -46,5 +50,8 @@ export const mutations = {
   },
   setFeedBackDialog(state, payload) {
     state.feedBackDialog = payload;
+  },
+  setNodeLabels(state, payload) {
+    state.nodeLabels = payload;
   },
 };
