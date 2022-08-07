@@ -574,7 +574,6 @@ export default {
     },
   },
   mounted() {
-    console.log("a", this.type, this.context);
     document.addEventListener("mousedown", () => (this.drag = false));
     document.addEventListener("mousemove", () => (this.drag = true));
   },
