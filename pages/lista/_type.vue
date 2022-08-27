@@ -158,6 +158,7 @@ export default {
       datePicker: false,
       page: 0,
       pageSize: 20,
+      properties: "",
       filterTab: false,
       filter: {},
       orderBy: "createdAt_desc",
@@ -254,105 +255,43 @@ export default {
                     orderBy: $orderBy
                   ) {
                       Id: id
-  name
-  email
-  role
-  createdAt {
-    createdAt: formatted
-  }
+                      ${this.properties}
                   }
                 }
                 `;
     },
     possibleOrderByOptionsTranslated() {
       let self = this;
-      let fields = this.possibleOrderByOptions.enumValues
+      return this.possibleOrderByOptions.enumValues
         .map((el) => {
           return { name: el.name, translatedName: self.translate(el.name) };
         })
         .filter((el) => {
           return el.name != el.translatedName;
         });
-      return fields.filter((el) => {
-        if (this.type === "escolas") {
-          return (
-            el.name === "clientStatus_asc" ||
-            el.name === "clientStatus_desc" ||
-            el.name === "numberOfStudents_asc" ||
-            el.name === "numberOfStudents_desc" ||
-            el.name === "activeStudents_asc" ||
-            el.name === "activeStudents_desc"
-          );
-        }
-        if (this.type === "turmas") {
-          return (
-            el.name === "schoolYear_asc" ||
-            el.name === "schoolYear_desc" ||
-            el.name === "clientStatus_asc" ||
-            el.name === "clientStatus_desc" ||
-            el.name === "numberOfStudents_asc" ||
-            el.name === "numberOfStudents_desc" ||
-            el.name === "activeStudents_asc" ||
-            el.name === "activeStudents_desc"
-          );
-        }
-        if (this.type === "alunos") {
-          return (
-            el.name === "schoolYear_asc" ||
-            el.name === "schoolYear_desc" ||
-            el.name === "lastActivity_asc" ||
-            el.name === "lastActivity_desc" ||
-            el.name === "points_asc" ||
-            el.name === "points_desc"
-          );
-        }
-        if (this.type === "educadores") {
-          return (
-            el.name === "lastActivity_asc" ||
-            el.name === "lastActivity_desc" ||
-            el.name === "schoolClassesCount_asc" ||
-            el.name === "schoolClassesCount_desc" ||
-            el.name === "schoolsCount_asc" ||
-            el.name === "schoolsCount_desc" ||
-            el.name === "tasksCount_asc" ||
-            el.name === "tasksCount_desc" ||
-            el.name === "assessmentsCount_asc" ||
-            el.name === "assessmentsCount_desc"
-          );
-        }
-        if (this.type === "responsaveis") {
-          return (
-            el.name === "lastActivity_asc" || el.name === "lastActivity_desc"
-          );
-        }
-        if (this.type === "atividades") {
-          return (
-            el.name === "createdAt_asc" ||
-            el.name === "createdAt_desc" ||
-            el.name === "startDate_asc" ||
-            el.name === "startDate_desc" ||
-            el.name === "endDate_asc" ||
-            el.name === "endDate_desc" ||
-            el.name === "status_asc" ||
-            el.name === "status_desc"
-          );
-        }
-        if (this.type == "avaliações") {
-          return (
-            el.name === "createdAt_asc" ||
-            el.name === "createdAt_desc" ||
-            el.name === "startsAt_asc" ||
-            el.name === "startsAt_desc" ||
-            el.name === "endsAt_asc" ||
-            el.name === "endsAt_desc" ||
-            el.name === "status_asc" ||
-            el.name === "status_desc"
-          );
-        }
-      });
     },
   },
-
+  watch: {
+    __type(newVal) {
+      if (newVal?.fields) {
+        let properties = "";
+        for (let field of newVal.fields) {
+          if (field.type.ofType) {
+            if (field.type.ofType.kind != "OBJECT") {
+              properties = `${properties}
+                      ${field.name}`;
+            }
+          } else {
+            if (field.type.kind != "OBJECT") {
+              properties = `${properties}
+                          ${field.name}`;
+            }
+          }
+        }
+        this.properties = properties;
+      }
+    },
+  },
   mounted() {
     window.addEventListener("scroll", this.infiniteScroll);
     window.addEventListener("keyup", this.handleEnterKeyPressed);
@@ -444,6 +383,7 @@ export default {
     },
 
     getSearchableProperties() {
+      console.log("s");
       if (this.__type) {
         let searchable = [];
         for (let field of this.__type.fields) {
