@@ -161,7 +161,7 @@ export default {
       properties: "",
       filterTab: false,
       filter: {},
-      orderBy: "createdAt_desc",
+      orderBy: "_id_asc",
       selectedElements: [],
       sinceDate: DateTime.local().plus({ days: -30 }).startOf("day").toISO(),
       now: DateTime.local().plus({ days: 1 }).startOf("day").toISO(),
@@ -254,7 +254,7 @@ export default {
                     offset: $offset
                     orderBy: $orderBy
                   ) {
-                      Id: id
+                      _id
                       ${this.properties}
                   }
                 }

@@ -1,6 +1,6 @@
 const profileEntities = require("./informationMaps/profileEntities.json");
 const profileInfo = require("./informationMaps/profileInfo.json");
-const tableHeaders = require("./informationMaps/tableHeaders.json");
+// const tableHeaders = require("./informationMaps/tableHeaders.json");
 const editableProperties = require("./informationMaps/editableProperties.json");
 
 const translation = require("./translation.json");
@@ -107,12 +107,7 @@ export default {
     return flattenedObject;
   },
   getDataTableHeaders(context, type) {
-    if (Object.keys(tableHeaders[context]).includes(type)) {
-      return tableHeaders[context][type];
-    } else {
-      console.log(`Type ${type} missing on tableHeaders[${context}].json`);
-      return null;
-    }
+    console.log(context, type);
   },
   computeDataTableRows(rows) {
     let flattenedRow = JSON.parse(

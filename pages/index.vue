@@ -88,7 +88,12 @@ export default {
         query: require("~/graphql/nodeLabels.gql"),
       });
       this.nodeLabels = data.__schema.types
-        .filter((t) => t.kind == "OBJECT" && !t.name.startsWith("_"))
+        .filter(
+          (t) =>
+            t.kind == "OBJECT" &&
+            !t.name.startsWith("_") &&
+            !["Query", "Mutation", "Subscription"].includes(t.name)
+        )
         .sort((a, b) => (a.name > b.name ? 1 : -1));
       this.$store.commit("setNodeLabels", this.nodeLabels);
       this.loading = false;

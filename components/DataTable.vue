@@ -363,7 +363,7 @@ export default {
       return this.computeDataTableRows(this.rows);
     },
     headers() {
-      return this.getDataTableHeaders(this.context, this.type);
+      return Object.keys(this.rows[0]);
     },
     searchedRows() {
       var results = [];
@@ -395,10 +395,6 @@ export default {
   methods: {
     typeTo__typename(s) {
       return utils.typeTo__typename(s);
-    },
-
-    getDataTableHeaders(context, type) {
-      return utils.getDataTableHeaders(context, type);
     },
     computeDataTableRows(r) {
       return utils.computeDataTableRows(r);

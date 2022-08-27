@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="accent-4" dense dark>
+  <v-app-bar color="accent-4" dense dark max-height="48px">
     <img v-if="!isLoading" class="mx-4 fill-height" src="/logo.png" alt="" />
     <v-toolbar-title style="min-width: 15vw">
       <v-text-field
@@ -66,7 +66,12 @@ export default {
         query: require("~/graphql/nodeLabels.gql"),
       });
       const nodeLabels = data.__schema.types
-        .filter((t) => t.kind == "OBJECT" && !t.name.startsWith("_"))
+        .filter(
+          (t) =>
+            t.kind == "OBJECT" &&
+            !t.name.startsWith("_") &&
+            !["Query", "Mutation", "Subscription"].includes(t.name)
+        )
         .sort((a, b) => (a.name.length > b.name.length ? 1 : -1));
       this.$store.commit("setNodeLabels", nodeLabels);
       console.log(nodeLabels);
