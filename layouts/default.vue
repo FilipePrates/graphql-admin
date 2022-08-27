@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <app-bar
-      v-if="!$route.path.includes('login')"
-      class="d-none d-md-flex"
-      :loading="loading"
-    />
+    <app-bar class="" :loading="loading" />
     <nuxt />
 
     <v-dialog v-model="formDialog" persistent class="pa-0" max-width="800px">
@@ -240,7 +236,18 @@ export default {
     async handleExport(payload) {
       let response = [];
       const dataTable = [
-        ["ID", "Nome da atividade","Criador", "Email", "Criado em", "Começa em", "Termina em", "Tópicos", "Turma",  "Status"],
+        [
+          "ID",
+          "Nome da atividade",
+          "Criador",
+          "Email",
+          "Criado em",
+          "Começa em",
+          "Termina em",
+          "Tópicos",
+          "Turma",
+          "Status",
+        ],
       ];
       if (this.$route.path === "/lista/atividades") {
         for (let activity of payload.elements) {
@@ -262,20 +269,19 @@ export default {
                   .split("BRT")[0]
             );
             dataTable.push([
-                    task.id,
-                    task.name,
-                    task.creator.name,
-                    task.creator.email,
-                    datesFormatted[0],
-                    datesFormatted[1],
-                    datesFormatted[2],
-                    task.topics.map((topic) => topic.name).join(", "),
-                    task.schoolClass
-                      .map((schoolClass) => schoolClass.name)
-                      .join(", "),
-                    this.statusTranslate(task.status),
-                  
-                ])
+              task.id,
+              task.name,
+              task.creator.name,
+              task.creator.email,
+              datesFormatted[0],
+              datesFormatted[1],
+              datesFormatted[2],
+              task.topics.map((topic) => topic.name).join(", "),
+              task.schoolClass
+                .map((schoolClass) => schoolClass.name)
+                .join(", "),
+              this.statusTranslate(task.status),
+            ]);
           } catch (e) {
             console.log(e);
             alert(e);
@@ -284,11 +290,11 @@ export default {
         }
         //end for loop
         const wb = XLSX.utils.book_new();
-        
+
         wb.Props = {
           Title: "Atividades",
           Subject: "Atividades",
-          }
+        };
 
         wb.SheetNames.push("Atividades"); //sheet name
 
@@ -296,7 +302,10 @@ export default {
 
         wb.Sheets["Atividades"] = ws; //sheet object
 
-          XLSX.writeFile(wb, "Atividades.xlsx" ,{bookType:'xlsx', type:'binary'}); //write file
+        XLSX.writeFile(wb, "Atividades.xlsx", {
+          bookType: "xlsx",
+          type: "binary",
+        }); //write file
       } else {
         for (let activity of payload.elements) {
           try {
@@ -613,14 +622,13 @@ export default {
       // if (this.add == false) {
       // if (confirm("refresh?")) {
       setTimeout(() => {
-        if( 
-            this.$route.path.includes(payload.typename) &&
-            this.$route.path.includes("perfil") &&
-            payload.action === "Deletar" 
-          ){
-            return   this.routerReplace({path:`/lista/${payload.typename}`});
-        }
-        else{
+        if (
+          this.$route.path.includes(payload.typename) &&
+          this.$route.path.includes("perfil") &&
+          payload.action === "Deletar"
+        ) {
+          return this.routerReplace({ path: `/lista/${payload.typename}` });
+        } else {
           return this.$router.go();
         }
         // this.routerReplace(this.$route.fullPath);

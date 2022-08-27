@@ -2,29 +2,29 @@
   {
     "name": "login",
     "path": "/login",
-    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/login.vue",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/login.vue",
     "chunkName": "pages/login",
-    "_name": "_d7c7fc9c"
+    "_name": "_3f81c531"
   },
   {
     "name": "lista-type",
     "path": "/lista/:type?",
-    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/lista/_type.vue",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/lista/_type.vue",
     "chunkName": "pages/lista/_type",
-    "_name": "_f3328bd4"
+    "_name": "_2134bb56"
   },
   {
     "name": "perfil-type-id",
     "path": "/perfil/:type?/:id?",
-    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/perfil/_type/_id.vue",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/perfil/_type/_id.vue",
     "chunkName": "pages/perfil/_type/_id",
-    "_name": "_0b2f50f0"
+    "_name": "_600882ae"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/home/filipe/Desktop/Pessoal/graphql-admin/pages/index.vue",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_6b1742ca"
+    "_name": "_75da221a"
   }
 ]

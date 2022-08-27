@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt -p 3000",
-    "serve": "nuxt -p 3000",
+    "dev": "nuxt -p 8000",
+    "serve": "nuxt -p 8000",
     "build": "NODE_ENV=production nuxt build",
     "staging": "VUE_APP_ENV=staging nuxt build",
     "testing": "VUE_APP_ENV=testing nuxt build",
