@@ -176,7 +176,7 @@ export default {
         });
         if (data.login) {
           await this.saveToken(data.login.token);
-          this.$router.push("/lista/escolas");
+          this.$router.push("/lista/Admin");
         }
       } catch (error) {
         // this.handleLoginError(error);

@@ -98,7 +98,7 @@
     <div v-if="list" class="d-flex fit-screen px-4">
       <data-table
         v-if="list.length > 0"
-        :type="typeTo__typename(this.type)"
+        :type="this.type"
         :selected="selectedElements"
         :rows="list"
         :sinceDate="sinceDate"
@@ -128,6 +128,7 @@
 
 <script>
 import { DateTime } from "luxon";
+import gql from "graphql-tag";
 import DataTable from "~/components/DataTable.vue";
 import DataTableHeader from "~/components/DataTableHeader.vue";
 import EmptyState from "~/components/EmptyState.vue";
@@ -170,7 +171,7 @@ export default {
   apollo: {
     list: {
       query() {
-        return require(`~/graphql/${this.type}/list.gql`);
+        return this.listQuery;
       },
       loadingKey() {
         return this.loading;
@@ -207,7 +208,7 @@ export default {
       },
       variables() {
         return {
-          typename: this.typeTo__typename(this.type),
+          typename: this.type,
         };
       },
       error(error) {
@@ -226,7 +227,7 @@ export default {
       },
       variables() {
         return {
-          name: `_${this.typeTo__typename(this.type)}Ordering`,
+          name: `_${this.type}Ordering`,
         };
       },
       error(error) {
@@ -239,6 +240,30 @@ export default {
   },
 
   computed: {
+    listQuery() {
+      return gql`query list(
+                  $first: Int
+                  $offset: Int
+                  $orderBy: [_${this.type}Ordering]
+                  $filter: _${this.type}Filter
+                ) {
+                  list: ${this.type}(
+                    filter: $filter
+                    first: $first
+                    offset: $offset
+                    orderBy: $orderBy
+                  ) {
+                      Id: id
+  name
+  email
+  role
+  createdAt {
+    createdAt: formatted
+  }
+                  }
+                }
+                `;
+    },
     possibleOrderByOptionsTranslated() {
       let self = this;
       let fields = this.possibleOrderByOptions.enumValues
@@ -397,21 +422,18 @@ export default {
       }
     },
     async emitElementAction(action) {
-      let typename = this.typeTo__typename(this.type.toLowerCase());
       $nuxt.$emit("elementAction", {
         action: action,
         context: "list",
         elements: this.selectedElements,
-        __typename: typename,
+        __typename: this.type,
       });
     },
     async emitTabAction(action) {
-      let typename = this.typeTo__typename(this.type.toLowerCase());
       $nuxt.$emit("tabAction", {
         action: action,
         context: "list",
-        type: this.type.toLowerCase(),
-        __typename: typename,
+        __typename: this.type,
       });
     },
     changedSinceDate(newSinceDate) {
@@ -490,9 +512,6 @@ export default {
       ) {
         this.fetchMore();
       }
-    },
-    typeTo__typename(s) {
-      return utils.typeTo__typename(s);
     },
     translate(s) {
       return utils.translate(s);
