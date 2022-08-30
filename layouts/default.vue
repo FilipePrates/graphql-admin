@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <app-bar class="" :loading="loading" />
+    <app-bar v-if="$route.path != '/login'" :loading="loading" />
     <nuxt />
 
     <v-dialog v-model="formDialog" persistent class="pa-0" max-width="800px">

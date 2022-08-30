@@ -26,6 +26,7 @@ export const state = () => ({
   feedBackText: "",
   feedBackDialog: false,
   nodeLabels: [],
+  graphQLEndpoint: "",
 });
 export const getters = {
   getUser(state) {
@@ -53,5 +54,8 @@ export const mutations = {
   },
   setNodeLabels(state, payload) {
     state.nodeLabels = payload;
+  },
+  setGraphQLEndPoint(state, payload) {
+    state.graphQLEndpoint = payload;
   },
 };

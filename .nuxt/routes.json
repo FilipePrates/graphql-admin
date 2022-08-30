@@ -7,6 +7,13 @@
     "_name": "_3f81c531"
   },
   {
+    "name": "setup",
+    "path": "/setup",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/setup.vue",
+    "chunkName": "pages/setup",
+    "_name": "_02dc6645"
+  },
+  {
     "name": "lista-type",
     "path": "/lista/:type?",
     "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/lista/_type.vue",
