@@ -118,8 +118,8 @@ import Loader from "~/components/BookLoader.vue";
 export default {
   data() {
     return {
-      email: "",
-      password: "",
+      email: "graphql-admins@demo.com",
+      password: "verysafepassword",
       e3: true,
       handledError: null,
       hidePassword: true,
@@ -176,7 +176,7 @@ export default {
         });
         if (data.login) {
           await this.saveToken(data.login.token);
-          this.$router.push("/setup");
+          this.$router.push("/list/Student");
         }
       } catch (error) {
         // this.handleLoginError(error);

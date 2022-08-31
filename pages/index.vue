@@ -69,7 +69,8 @@ export default {
     };
   },
   mounted() {
-    this.getNodeLabels();
+    this.$router.push("/setup");
+    // this.getNodeLabels();
   },
   methods: {
     selectedMainNode(n) {

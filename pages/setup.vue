@@ -26,7 +26,7 @@
       <v-row justify="center">
         <v-col cols="12">
           <v-row>
-            <v-col class="justify-center text-center" cols="12">
+            <v-col class="justify-center text-center mt-5" cols="12">
               <span class="setup-title">Generic GraphQL Manager</span>
               <v-icon color="#888888" size="13">mdi-help-circle</v-icon>
             </v-col>
@@ -78,7 +78,6 @@
         <v-col
           class="mt-1 d-flex justify-center align-center cursor-pointer"
           cols="12"
-          @click="openContactBox"
         >
           <v-icon class="mr-2">mdi-help-circle-outline</v-icon>
 
@@ -109,8 +108,8 @@ export default {
   },
   methods: {
     async saveEndPoint() {
-      console.log(this.$apollo);
       this.$store.commit("setGraphQLEndPoint", this.endpoint);
+      this.$router.push("/login");
       try {
         this.errorMessage = undefined;
         this.loading = true;
