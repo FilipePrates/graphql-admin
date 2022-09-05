@@ -28,7 +28,18 @@
           <v-row>
             <v-col class="justify-center text-center mt-5" cols="12">
               <span class="setup-title">Generic GraphQL Manager</span>
-              <v-icon color="#888888" size="13">mdi-help-circle</v-icon>
+              <v-tooltip bottom>
+                <template v-slot:activator="{}"> </template>
+                <span>Tooltip</span>
+              </v-tooltip>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-icon color="#888888" size="13" v-bind="attrs" v-on="on"
+                    >mdi-help-circle</v-icon
+                  >
+                </template>
+                <span>Work in Progress.</span>
+              </v-tooltip>
             </v-col>
             <v-col class="text-center">
               <span class="setup-subtitle" style="max-width: 40vw"
@@ -71,7 +82,7 @@
             height="48px"
             class="my-4"
           >
-            <span class="font-weight-regular fs-16 white--text"> Entrar </span>
+            <span class="font-weight-regular fs-16 white--text"> Connect </span>
           </v-btn>
         </v-col>
 
@@ -113,7 +124,7 @@ export default {
       try {
         this.errorMessage = undefined;
         this.loading = true;
-        this.getNodeLabels();
+        await this.getNodeLabels();
         this.loading = false;
       } catch (error) {
         // this.handleLoginError(error);
