@@ -14,6 +14,13 @@
     "_name": "_02dc6645"
   },
   {
+    "name": "setupGQLTemplates",
+    "path": "/setupGQLTemplates",
+    "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/setupGQLTemplates.vue",
+    "chunkName": "pages/setupGQLTemplates",
+    "_name": "_00f3fbfc"
+  },
+  {
     "name": "lista-type",
     "path": "/lista/:type?",
     "component": "/home/filipe/Desktop/Pessoal/graphql-admin-fullstack/frontend/pages/lista/_type.vue",

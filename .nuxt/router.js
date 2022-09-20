@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _3f81c531 = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 const _02dc6645 = () => interopDefault(import('../pages/setup.vue' /* webpackChunkName: "pages/setup" */))
+const _00f3fbfc = () => interopDefault(import('../pages/setupGQLTemplates.vue' /* webpackChunkName: "pages/setupGQLTemplates" */))
 const _2134bb56 = () => interopDefault(import('../pages/lista/_type.vue' /* webpackChunkName: "pages/lista/_type" */))
 const _600882ae = () => interopDefault(import('../pages/perfil/_type/_id.vue' /* webpackChunkName: "pages/perfil/_type/_id" */))
 const _75da221a = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
@@ -29,6 +30,10 @@ export const routerOptions = {
     path: "/setup",
     component: _02dc6645,
     name: "setup"
+  }, {
+    path: "/setupGQLTemplates",
+    component: _00f3fbfc,
+    name: "setupGQLTemplates"
   }, {
     path: "/lista/:type?",
     component: _2134bb56,
